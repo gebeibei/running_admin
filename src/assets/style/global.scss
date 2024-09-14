@@ -1,0 +1,75 @@
+:root {
+    --zrx-menu-bg: #2d43b3;
+}
+
+// 重置菜单颜色
+.el-menu:not(.el-menu--popup) {
+    --zrx-icon-bg: #fff;
+    --el-menu-text-color: #fff;
+    --el-menu-active-color: #fff;
+    --zrx-menu-active-icon-bg: #fff;
+    --zrx-menu-active-bg-color: rgba(0, 0, 0, 0.16);
+}
+
+.el-table--border:after,
+.el-table--border:before,
+.el-table--border .el-table__inner-wrapper:after,
+.el-table__inner-wrapper:before {
+    display: none;
+}
+
+.el-table:not(.el-origin)
+    .el-table__inner-wrapper
+    .el-table__body-wrapper
+    .el-table__body
+    .el-table__cell
+    .cell
+    .el-button
+    + .el-button {
+    margin-left: 16px;
+}
+
+.zrx-left-side {
+    background-color: var(--zrx-menu-bg);
+
+    .zrx-left-main-title {
+        color: #fff;
+    }
+
+    .zrx-left-bottom {
+        --zrx-font: 255, 255, 255;
+    }
+}
+
+.zrx-floor-context {
+    --zrx-page-padding: 0 0 16px;
+}
+
+.el-popper.is-dark,
+.el-popper.is-light {
+    max-width: 50vw !important;
+
+    // .zrx-tooltip-content {
+    //     // @include ellipsisL(10);
+    // }
+}
+
+.el-picker-panel.el-date-picker.has-sidebar {
+    width: 380px !important;
+}
+
+.zrx-icon-exit {
+    mask-image: url("../images/common/icon_home.svg");
+}
+
+.el-cascader__dropdown.custom {
+    .el-cascader-menu:first-child {
+        .el-cascader-menu__list {
+            > .el-cascader-node {
+                > .el-radio {
+                    display: none;
+                }
+            }
+        }
+    }
+}

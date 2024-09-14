@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="18px" viewBox="0 0 23 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 48</title>
+    <g id="综合网格管理平台" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01全量信息1-0备份" transform="translate(-16.000000, -19.000000)">
+            <g id="编组-30" transform="translate(16.000000, 16.000000)">
+                <g id="编组-48" transform="translate(0.000000, 3.000000)">
+                    <polygon id="形状_1" fill="#FFFFFF" points="0 0 18 6.09230769 18 16.2 12.5038168 16.2 15.1145038 15.5076923 15.1145038 8.44615385 2.88549618 4.43076923 2.88549618 17.1692308 5.63358779 18 0 18"></polygon>
+                    <path d="M23,0 L23,18 L17.3664122,18 L20.1145038,17.1692308 L20.1145038,4.43076923 L17.994,5.126 L12.924,3.41 L23,0 Z M5,6.126 L9.975,7.76 L7.88549618,8.44615385 L7.88549618,15.5076923 L10.4961832,16.2 L5,16.2 L5,6.126 Z" id="形状结合" fill="#18CA94"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
