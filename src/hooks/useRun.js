@@ -86,6 +86,8 @@ const runRecords = lodash
 
 export const useRun = () => {
     const total = ref(runRecords.length)
+    const years = new Map()
+    const provinces = new Map()
 
     const getDetailById = (id) => {
         return runRecords.find((item) => item.id == id)
@@ -139,10 +141,68 @@ export const useRun = () => {
         return targetDataList.slice((pageNum - 1) * pageSize, pageNum * pageSize)
     }
 
+    const analysisRunData = (list) => {
+        let totalDistance = 0
+        let pace = 0
+        let paceNullCount = 0
+        let heartRate = 0
+        let heartRateNullCount = 0
+        let totalMetersAvail = 0
+        let totalSecondsAvail = 0
+
+        list.forEach((item) => {
+            const run = item.origin
+            totalDistance += Number(run.distance)
+
+            if (run.average_speed) {
+                pace += run.average_speed
+                totalMetersAvail += run.distance || 0
+                totalSecondsAvail += (run.distance || 0) / run.average_speed
+            } else {
+                paceNullCount++
+            }
+            if (run.average_heartrate) {
+                heartRate += run.average_heartrate
+            } else {
+                heartRateNullCount++
+            }
+        })
+
+        const avgHeartRate = list.length === heartRateNullCount ? '' : (heartRate / (list.length - heartRateNullCount)).toFixed(0)
+
+        return {
+            totalRuns: list.length,
+            avgPace: formatPace(totalDistance / totalSecondsAvail),
+            avgHeartRate: avgHeartRate,
+            totalDistance: (totalDistance / 1000).toFixed(0)
+        }
+    }
+
+    const groupAllData = () => {
+        runRecords.forEach((run) => {
+            const year = run.startDate.slice(0, 4)
+            const province = run.location.province
+            if (years.has(year)) {
+                years.get(year).push(run)
+            } else {
+                years.set(year, [run])
+            }
+            if (provinces.has(province)) {
+                provinces.get(province).push(run)
+            } else {
+                provinces.set(province, [run])
+            }
+        })
+    }
+
     return {
         total,
         runRecords,
+        years,
+        provinces,
         getList,
-        getDetailById
+        getDetailById,
+        analysisRunData,
+        groupAllData
     }
 }
