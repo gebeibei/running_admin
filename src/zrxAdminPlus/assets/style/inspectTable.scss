@@ -1,0 +1,43 @@
+.zrx-inspect-table {
+    --zrx-inspect-table-line-height: 24px;
+
+    border: 1px solid $border;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: repeat(var(--zrx-inspect-table-cols), minmax(0, 1fr));
+
+    .zrx-inspect-table-td {
+        @include flex-center;
+        line-height: var(--zrx-inspect-table-line-height);
+        border-right: 1px solid $border;
+        border-bottom: 1px solid $border;
+
+        .zrx-inspect-table-td__label {
+            background-color: $fill;
+            padding: 6px 12px;
+            flex-shrink: 0;
+            color: getCssVar('font', 0.7);
+            width: var(--zrx-inspect-table-label-width);
+            height: 100%;
+            border-right: 1px solid $border;
+            @include ellipsis;
+
+            &.is-required::after {
+                content: '*';
+                display: inline;
+                color: $error;
+                margin-left: 2px;
+            }
+        }
+
+        .zrx-inspect-table-td__value {
+            padding: 6px 12px;
+            width: 10px;
+            flex: 1 1 auto;
+            color: getCssVar('font', 0.9);
+            line-height: var(--zrx-inspect-table-line-height);
+        }
+    }
+}

@@ -1,0 +1,191 @@
+@use 'sass:math';
+@use 'sass:map';
+
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin ellipsisL($lines) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+// 垂直居中
+@mixin align-center {
+    display: flex;
+    align-items: center;
+}
+
+@function getCssVar($name, $opacity: 1) {
+    @return rgba(var(#{'--zrx-' + $name}), $opacity);
+}
+@mixin bgImage($url) {
+    background-image: url(#{$url});
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+@mixin scrollbar($thumb: $--default-scroll-color, $ac-thumb: $--click-scroll-color, $track: $--scroll-track-color) {
+    &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        &:hover {
+            background-color: $track;
+        }
+    }
+    // 滚动条滑块
+    &::-webkit-scrollbar-thumb {
+        border: 4px solid transparent;
+        border-radius: 100px;
+        background-color: $thumb;
+        background-clip: padding-box;
+        &:hover {
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        &:active {
+            background-color: $ac-thumb;
+        }
+    }
+}
+
+@mixin dropdown-shadow {
+    box-shadow: var(--el-box-shadow);
+}
+
+@mixin boldFont {
+    font-family: "MicrosoftYaHei-Bold";
+    font-weight: 700;
+}
+
+@mixin svgIcon($url, $type: 'mask-image') {
+    display: inline-block;
+    width: var(--zrx-icon-width, 24px);
+    height: var(--zrx-icon-height, 24px);
+    mask-position: center center;
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    background-color: var(--zrx-icon-bg, $font);
+
+    @if $type == 'mask-image' {
+        mask-image: url($url);
+    } @else {
+        background-image: url($url);
+    }
+}
+
+@mixin bgImage($url) {
+    background-image: url($url);
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+$zrxTypes: primary, success, warning, danger, error;
+$zrxColors: () !default;
+$zrxColors: map.deep-merge(
+    (
+        'white': #ffffff,
+        'black': #000000,
+        'font': #3b4155,
+        'border': #dcdfe8,
+        // 填充灰色
+        'fill': #f4f5f8,
+        // 页面底色
+        'background': #f7f8fa,
+        // 次要按钮选中填充色
+        'secondary': #e8eaf0,
+        'primary-shadow': #4263fe,
+        // 暂时只有蓝色的 如未来各主色值都有shadow 移入主色值中
+        'primary':
+            (
+                'base': #405ffe,
+                'sel': #3955e4,
+                'hover': #667ffe,
+                'border': #a7b7fe,
+                'bg': #eceffe
+            ),
+        'success': (
+            'base': #1bbe8c,
+            'sel': #18aa7d,
+            'hover': #48cba3,
+            'border': #a4e5d1,
+            'bg': #e8f8f3
+        ),
+        'warning': (
+            'base': #ffa433,
+            'sel': #e5932d,
+            'hover': #ffb65b,
+            'border': #ffd5a0,
+            'bg': #fff5ea
+        ),
+        'danger': (
+            'base': #f0465a,
+            'sel': #d73e50,
+            'hover': #f36b7b,
+            'border': #f9b5bd,
+            'bg': #fdecee
+        ),
+        'error': (
+            'base': #f0465a,
+            'sel': #d73e50,
+            'hover': #f36b7b,
+            'border': #f9b5bd,
+            'bg': #fdecee
+        ),
+        'gray': (
+            'base': #b8bed5,
+            'sel': #9398aa,
+            'hover': #c6cbdd
+        )
+    ),
+    $zrxColors
+);
+
+@mixin size($val) {
+    width: $val;
+    height: $val;
+}
+
+$primary: getCssVar('primary') !default;
+$success: getCssVar('success') !default;
+$error: getCssVar('error') !default;
+$danger: getCssVar('danger') !default;
+$warning: getCssVar('warning') !default;
+$gray: getCssVar('gray') !default;
+$grayHover: getCssVar('gray-hover') !default;
+$font: getCssVar('font') !default;
+$fontLight: getCssVar('font', 0.7) !default;
+$border: getCssVar('border') !default;
+$background: getCssVar('background') !default;
+$fill: getCssVar('fill') !default;
+$white: getCssVar('white') !default;
+$black: getCssVar('black') !default;
+$secondary: getCssVar('secondary') !default;
+$primaryBorder: getCssVar('primary-border') !default;
+$primaryHover: getCssVar('primary-hover') !default;
+$primaryBg: getCssVar('primary-bg') !default;
+$primarySel: getCssVar('primary-sel') !default;
+$inputShadow: 0 0 4px 2px getCssVar('primary', 0.1);
+$inputErrorShadow: 0 0 4px 2px getCssVar('error', 0.1);

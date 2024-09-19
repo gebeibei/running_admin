@@ -1,0 +1,314 @@
+@mixin uploadBlockCss() {
+    @include flex-center;
+    width: var(--zrx-upload-width, 140px);
+    height: var(--zrx-upload-height, 112px);
+    border-radius: 2px;
+    pointer-events: auto;
+    flex-direction: column;
+    background-color: $fill;
+    border: 1px dashed $border;
+}
+
+// 上传组件样式
+@mixin uploadIcon($url) {
+    width: var(--zrx-upload-icon-width, 40px);
+    height: var(--zrx-upload-icon-height, 40px);
+    background-size: 100% 100%;
+    background-image: url($url);
+}
+
+.zrx-upload {
+    &.disabled {
+        .el-button,
+        .files-preview .btn,
+        .el-upload-dragger,
+        .zrx-upload-icon-box {
+            cursor: not-allowed;
+        }
+        .zrx-upload-icon-box,
+        .zrx-drag-upload .el-upload .el-upload-dragger {
+            &:hover {
+                border-color: $border;
+            }
+        }
+    }
+}
+
+// 卡片型图片上传
+.zrx-upload-image,
+.zrx-upload-file {
+    position: relative;
+    pointer-events: none;
+
+    .el-upload--picture-card,
+    .el-upload--text {
+        width: auto;
+        height: auto;
+        gap: var(--zrx-upload-gap, 12px 12px);
+        border: 1px solid transparent;
+        background-color: transparent;
+
+        .zrx-upload-icon-box {
+            @include uploadBlockCss;
+
+            &:hover {
+                border-color: getCssVar('primary-hover');
+            }
+
+            i.svg-icon.zrx-icon-upload-image, 
+            i.svg-icon.zrx-icon-upload-file {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 6px;
+            }
+
+            .zrx-click-upload {
+                color: getCssVar('font', 0.5);
+                font-size: 12px;
+            }
+
+            .zrx-upload-image-tip {
+                color: getCssVar('font', 0.4);
+                font-size: 12px;
+                margin-top: 4px;
+                text-align: center;
+            }
+        }
+
+        .zrx-image-preview,
+        .zrx-file-preview {
+            @include uploadBlockCss;
+            border-style: solid;
+            position: relative;
+            flex-shrink: 0;
+
+            &:hover {
+                .shade {
+                    display: flex;
+                }
+                .svg-icon-reload-container {
+                    opacity: 1;
+                }
+            }
+
+            .el-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .shade {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                background-color: getCssVar('black', 0.3);
+                z-index: 101;
+                .btn {
+                    line-height: 0;
+                    &:hover {
+                        .svg-icon {
+                            background-color: $white;
+                        }
+                    }
+                    .svg-icon {
+                        background-color: $white;
+                    }
+                    &:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .svg-icon-reload-container {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 108px;
+                height: 32px;
+                background-color: getCssVar('black', 0.4);
+                border-radius: 1px;
+                opacity: 0;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 4px;
+                    top: 4px;
+                    width: 24px;
+                    height: 24px;
+                    @include bgImage('../svg-icon/others/reflash_sm.svg');
+                }
+                .reload-tip {
+                    position: absolute;
+                    top: 8px;
+                    left: 28px;
+                    height: 16px;
+                    line-height: 16px;
+                    color: $white;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+// 文件上传
+.zrx-upload-file {
+    .zrx-file-preview {
+        i.zrx-file-icon {
+            --zrx-upload-icon-width: 32px;
+            --zrx-upload-icon-height: 32px;
+            @include uploadIcon('../svg-icon/others/file_nor.svg');
+        }
+
+        .zrx-file-name {
+            padding: 0 12px;
+            margin-top: 4px;
+            text-align: center;
+            color: getCssVar('font', 0.7);
+            font-size: 12px;
+            line-height: 16px;
+            z-index: 100;
+            word-break: break-all;
+            @include ellipsisL(2);
+        }
+
+        i.zrx-remove-icon {
+            @include uploadIcon('../svg-icon/auto-import/delete.svg');
+            opacity: 0;
+        }
+
+        &:hover i.zrx-remove-icon {
+            opacity: 1;
+        }
+    }
+}
+
+.zrx-button-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    pointer-events: none;
+    .el-upload {
+        flex-direction: column;
+        align-items: flex-start;
+
+        &.el-upload--text {
+            text-align: left;
+        }
+    }
+    .el-button {
+        pointer-events: auto;
+        --el-button-text-color: #{$font};
+        --el-button-border-color: #{$border};
+
+        &.zrx-button-ghost {
+            border-width: 0;
+        }
+
+        &:hover {
+            --el-button-hover-text-color: #{$font};
+            --el-button-hover-border-color: #{$border};
+            --el-button-hover-bg-color: #{$fill};
+        }
+
+        &:focus,
+        &:active {
+            --el-button-active-text-color: #{$font};
+            --el-button-active-border-color: #{$border};
+            --el-button-active-bg-color: #{$secondary};
+        }
+    }
+    .upload-tip {
+        order: 1;
+        width: 100%;
+        margin-top: 6px;
+        word-break: break-all;
+        font-size: 12px;
+        color: getCssVar('font', 0.7);
+    }
+}
+
+.zrx-drag-upload {
+    width: var(--zrx-upload-width, 436px);
+    height: var(--zrx-upload-height, 112px);
+
+    .el-upload {
+        width: 100%;
+        .el-upload-dragger {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            border-radius: 2px;
+            background-color: $fill;
+            border: 1px dashed $border;
+            position: relative;
+            padding: 18px 0 12px;
+            &:hover {
+                border: 1px dashed getCssVar('primary-hover');
+            }
+            .svg-icon {
+                margin: 0 auto;
+                @include uploadIcon('../svg-icon/others/icon_upload_file.svg');
+            }
+            .zrx-click-upload {
+                margin: 4px 0;
+                width: 48px;
+                height: 16px;
+                font-size: 12px;
+                text-align: center;
+                font-weight: 400;
+                width: 100%;
+                color: getCssVar('font', 0.7);
+            }
+            .upload-tip {
+                width: 100%;
+                word-break: break-all;
+                font-size: 12px;
+                color: getCssVar('font', 0.7);
+            }
+        }
+    }
+}
+
+.files-preview {
+    width: 100%;
+    order: 2;
+    margin-top: 12px;
+    li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        height: 28px;
+        > .icon,
+        > .btn {
+            flex: 0 0 auto;
+        }
+        span {
+            flex: 1 1 auto;
+            @include ellipsis;
+            margin: 0 8px 0 2px;
+            line-height: 20px;
+            font-size: 12px;
+            color: getCssVar('font', 0.9);
+        }
+        &:not(:last-of-type) {
+            margin-bottom: 4px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: calc(100% - 24px);
+            background-color: $border;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

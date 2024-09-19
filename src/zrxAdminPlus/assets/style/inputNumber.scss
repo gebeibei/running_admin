@@ -1,0 +1,41 @@
+.el-input-number {
+    &.is-controls-right {
+        width: var(--el-input-number-width, 80px);
+        .el-input {
+            .el-input__wrapper {
+                .el-input__inner {
+                    text-align: left;
+                }
+                &.is-focus {
+                    box-shadow: 0 0 4px 2px #{getCssVar('primary-shadow', 0.1)};
+                }
+            }
+        }
+        .el-input-number__increase,
+        .el-input-number__decrease {
+            width: 24px;
+            font-size: 14px;
+            color: $fontLight;
+            background-color: $white;
+            &:hover {
+                color: $font;
+                background-color: $fill;
+                ~ .el-input:not(.is-disabled) .el-input__wrapper {
+                    box-shadow: none;
+                }
+            }
+        }
+        .el-input-number__increase {
+            height: calc(var(--el-input-number-controls-height) + 1px);
+        }
+        &.is-disabled {
+            .el-input-number__decrease, .el-input-number__increase {
+                color: var(--el-disabled-text-color);
+                background-color: var(--el-disabled-bg-color);
+            }
+        }
+    }
+    .el-input__inner {
+        text-align: left;
+    }
+}

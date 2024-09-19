@@ -1,5 +1,5 @@
 import { G } from '@/config/global'
-import { ElMessageBox } from 'zrx-admin-plus'
+import { ElMessageBox } from '@/zrxAdminPlus'
 
 /**
  * @description 简化常用ElMessageBox调用

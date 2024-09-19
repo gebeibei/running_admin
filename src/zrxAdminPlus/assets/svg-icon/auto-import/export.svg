@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>daochu</title>
+    <g id="shangchaun" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="导出" transform="translate(-396.000000, -196.000000)">
+            <g id="Data-Entry/Button/IconButton/32/Normal备份-6" transform="translate(392.000000, 192.000000)">
+                <g id="daochu" transform="translate(4.000000, 4.000000)">
+                    <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M8,7 L7,7 L7,4.5 C7,4.22385763 7.22385763,4 7.5,4 L20.5,4 C20.7761424,4 21,4.22385763 21,4.5 L21,18.5 C21,18.7761424 20.7761424,19 20.5,19 L7.5,19 C7.22385763,19 7,18.7761424 7,18.5 L7,16 L8,16 L8,18 L20,18 L20,5 L8,5 L8,7 Z M8,11 L16,11 L16,12 L8,12 L8,14.5 L5,11.5 L8,8.5 L8,11 Z" id="Color" fill="#3B4155" fill-rule="nonzero" transform="translate(13.000000, 11.500000) scale(-1, 1) translate(-13.000000, -11.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

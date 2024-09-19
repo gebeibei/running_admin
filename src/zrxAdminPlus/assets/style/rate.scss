@@ -1,0 +1,58 @@
+.el-rate:not(.el-origin) {
+    --el-rate-height: 24px;
+    --el-rate-icon-size: 24px;
+    --el-rate-void-color: #{$font};
+    --el-rate-fill-color: #{$primary};
+
+    &:not(.is-disabled) {
+        i.el-icon.el-rate__icon:not(.el-rate__decimal) {
+            cursor: pointer;
+            &::before {
+                content: '';
+                --zrx-icon-bg: #{getCssVar('font', 0.7)};
+                @include svgIcon('../svg-icon/others/star_empty.svg');
+            }
+
+            &.is-active {
+                &::before {
+                    content: '';
+                    --zrx-icon-bg: #{$primary};
+                    @include svgIcon('../svg-icon/others/star_full.svg');
+                }
+            }
+        }
+    }
+
+    &.is-disabled {
+        i.el-icon.el-rate__icon {
+            cursor: not-allowed;
+            &::before {
+                content: '';
+                --zrx-icon-bg: #{$border};
+                @include svgIcon('../svg-icon/others/star_full.svg');
+            }
+
+            &.is-active {
+                &::before {
+                    content: '';
+                    --zrx-icon-bg: #{$primary};
+                    @include svgIcon('../svg-icon/others/star_full.svg');
+                }
+            }
+        }
+    }
+
+    i.el-icon.el-rate__icon {
+        &.el-rate__decimal {
+            position: absolute;
+
+            svg {
+                display: block;
+            }
+        }
+
+        svg {
+            display: none;
+        }
+    }
+}

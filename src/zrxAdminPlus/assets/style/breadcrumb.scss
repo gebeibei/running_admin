@@ -1,0 +1,39 @@
+.el-breadcrumb:not(.el-origin) {
+    --zrx-breadcrumb-text-color: var(--zrx-font);
+    .el-breadcrumb__item {
+        .el-breadcrumb__inner {
+            color: rgba(var(--zrx-breadcrumb-text-color), 0.3);
+            &.is-link,
+            > a {
+                cursor: pointer;
+                color: rgba(var(--zrx-breadcrumb-text-color), 0.7);
+                font-weight: 400;
+                &:hover {
+                    color: rgba(var(--zrx-breadcrumb-text-color, 1));
+                    border-bottom: 1px solid rgba(var(--zrx-breadcrumb-text-color, 1));
+                }
+            }
+        }
+
+        &.is-link {
+            .el-breadcrumb__inner {
+                cursor: pointer;
+                color: rgba(var(--zrx-breadcrumb-text-color), 0.7);
+                font-weight: 400;
+                &:hover {
+                    color: rgba(var(--zrx-breadcrumb-text-color, 1));
+                    border-bottom: 1px solid rgba(var(--zrx-breadcrumb-text-color, 1));
+                }
+            }
+        }
+
+        .el-breadcrumb__separator {
+            margin: 0 5px;
+        }
+        &:nth-last-child(1) {
+            .el-breadcrumb__inner {
+                color: rgba(var(--zrx-breadcrumb-text-color, 1));
+            }
+        }
+    }
+}

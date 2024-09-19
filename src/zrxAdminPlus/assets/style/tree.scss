@@ -1,0 +1,33 @@
+.el-tree:not(.el-origin) {
+    --el-tree-node-content-height: 32px;
+    padding-left: 4px;
+
+    .el-tree-node {
+        &.is-current:not(.is-disabled) > .el-tree-node__content{
+            background-color: getCssVar('primary-bg');
+        }
+
+        .el-tree-node__content {
+            // 因为树的箭头在点击后会旋转，所以用column-gap来表示margin-right
+            column-gap: 4px;
+            border-radius: 2px;
+            margin-bottom: 2px;
+
+            label.el-checkbox {
+                margin-right: 0;
+                // 样式规则复选框和箭头之间没有边距，所以使用margin-left: -4px来取消边距；
+                margin-left: -4px;
+            }
+
+            .el-icon.el-tree-node__expand-icon {
+                font-size: 24px;
+                padding: 0;
+            }
+
+            .el-tree-node__label {
+                @include ellipsis;
+                padding-right: 4px;
+            }
+        }
+    }
+}

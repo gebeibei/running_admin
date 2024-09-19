@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>01_Common_Btn/1_Common/common_upload</title>
+    <g id="01_Common_Btn/1_Common/common_upload" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+        <path d="M4.5,10.9992824 C4.77614237,10.9992824 5,11.22314 5,11.4992824 L5,17.9992824 L18,17.9992824 L18,11.4992824 C18,11.22314 18.2238576,10.9992824 18.5,10.9992824 C18.7761424,10.9992824 19,11.22314 19,11.4992824 L19,17.9992824 C19,18.5515672 18.5522847,18.9992824 18,18.9992824 L5,18.9992824 C4.44771525,18.9992824 4,18.5515672 4,17.9992824 L4,11.4992824 C4,11.22314 4.22385763,10.9992824 4.5,10.9992824 Z M12,8 L12,16 L11,16 L11,8 L8.5,8 L11.5,5 L14.5,8 L12,8 Z" id="Color" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>

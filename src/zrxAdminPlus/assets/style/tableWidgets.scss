@@ -1,0 +1,74 @@
+.zrx-table-widgets.zrx-popover {
+    margin-top: -8px !important;
+    padding: 0;
+
+    .zrx-table-widgets__header {
+        font-weight: 700;
+        padding-left: 12px;
+        padding-right: 4px;
+        margin-bottom: 4px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .el-table {
+        margin: 0 4px;
+        width: calc(100% - 8px);
+
+        --el-table-border-color: #{$white};
+        --el-table-header-bg-color: #{$white};
+
+        .cell {
+            padding: 0;
+        }
+
+        .el-table__cell {
+            height: 32px;
+        }
+
+        .fixed-row {
+            --el-table-row-hover-bg-color: #{$white};
+            cursor: not-allowed;
+        }
+
+        .normal-row {
+            cursor: pointer;
+        }
+
+        .el-table__header-wrapper .el-table-column--selection > .cell,
+        .el-table__body-wrapper .el-table-column--selection > .cell {
+            padding: 0 4px;
+        }
+
+        .el-table__inner-wrapper .el-table__header-wrapper th.el-table__cell .cell::before {
+            display: none;
+        }
+    }
+
+    .el-popper__arrow {
+        display: none;
+    }
+
+    .pop-btn {
+        margin: 16px 12px;
+
+        .el-button {
+            --zrx-btn-min-width: 160px;
+        }
+    }
+}
+
+.icon-filter-box {
+    display: inline-flex;
+    margin-left: 8px;
+
+    &:hover,
+    &.is-active {
+        background: $secondary;
+    }
+
+    > span {
+        height: 24px;
+        cursor: pointer;
+    }
+}

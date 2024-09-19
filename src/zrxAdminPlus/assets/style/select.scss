@@ -1,0 +1,157 @@
+.el-select:not(.el-origin) {
+    .el-select__wrapper {
+        padding: 3px 4px 3px 8px;
+        border: solid 1px $border;
+        box-shadow: none;
+
+        &.is-focused {
+            box-shadow: $inputShadow;
+            border: solid 1px $primary;
+        }
+
+        .el-select__selection {
+            &.is-near {
+                margin-left: 0;
+
+                .el-tag.el-tag--info {
+                    border-color: $border;
+                }
+            }
+        }
+
+        &.is-disabled {
+            .el-select__suffix i.el-icon.el-select__caret.el-select__icon {
+                --zrx-icon-bg: #{getCssVar('font', 0.3)};
+            }
+
+            .el-select__selection.is-near .el-tag.el-tag--info {
+                --el-tag-text-color: #{getCssVar('font', 0.3)};
+            }
+        }
+
+        .el-select__suffix {
+            i.el-icon.el-select__caret.el-select__icon,
+            i.el-icon.el-select__caret.el-input__icon {
+                --el-select-input-font-size: 24px;
+            }
+
+            :first-child {
+                &.el-icon.el-select__caret.el-input__icon {
+                    @include svgIcon('../svg-icon/auto-import/down-angle.svg');
+
+                    svg {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.el-popper.is-pure.is-light.el-select__popper {
+    $popperItemHeight: var(--zrx-popper-item-height, 32px);
+
+    .el-select-dropdown {
+        &.is-multiple {
+            .el-select-dropdown__wrap.el-scrollbar__wrap {
+                .el-scrollbar__view.el-select-dropdown__list {
+                    .el-select-dropdown__item {
+                        display: flex;
+                        align-items: center;
+
+                        &:before {
+                            content: '';
+                            width: 14px;
+                            height: 14px;
+                            margin: 0 4px;
+                            display: inline-block;
+                            background-color: #fff;
+                            border: solid 1px $border;
+                            box-sizing: border-box;
+                            border-radius: 2px;
+                        }
+
+                        &.is-selected {
+                            position: relative;
+
+                            &:before {
+                                content: '';
+                                color: #fff;
+                                text-align: center;
+                                line-height: 16px;
+                            }
+
+                            &::after {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                left: 10px;
+                                top: 16px;
+                                width: 10px;
+                                height: 7px;
+                                mask-image: url('../svg-icon/others/checkbox-checked.svg');
+                                mask-position: center center;
+                                mask-size: 100% 100%;
+                                mask-repeat: no-repeat;
+                            }
+
+                            &.is-disabled::before {
+                                background-color: $background;
+                            }
+
+                            &.is-disabled::after {
+                                background-color: getCssVar('font', 0.3);
+                            }
+                        }
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .el-scrollbar {
+            .el-select-dropdown__wrap.el-scrollbar__wrap {
+                .el-scrollbar__view.el-select-dropdown__list {
+                    padding: 4px;
+
+                    .el-select-group__wrap {
+                        padding-bottom: 0;
+
+                        &:after {
+                            display: none;
+                        }
+
+                        .el-select-group__title {
+                            padding-left: 4px;
+                            font-weight: bold;
+                            color: getCssVar('font', 0.7);
+                        }
+                    }
+
+                    .el-select-dropdown__item {
+                        padding: 0 4px;
+                        height: $popperItemHeight;
+                        line-height: $popperItemHeight;
+                        border-radius: var(--el-border-radius-base);
+
+                        &.is-selected {
+                            font-weight: normal;
+                            background-color: getCssVar('primary-bg');
+                        }
+
+                        &.is-selected:not(.is-disabled) {
+                            color: $font;
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

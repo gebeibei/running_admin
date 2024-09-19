@@ -1,0 +1,1183 @@
+$--text-color-disabled: #{getCssVar('black', 0.25)};
+.zrx-date-time-picker {
+    width: 100%;
+    height: 32px;
+    padding: 4px 11px;
+    position: relative;
+    border: 1px solid $border;
+    position: relative;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 16px);
+    &.disabled {
+        cursor: not-allowed;
+        background-color: $fill;
+        border-color: $border;
+        input,
+        .clear-btn,
+        .panel,
+        .clear-btn,
+        .range-input-value {
+            color: $--text-color-disabled;
+            pointer-events: none;
+        }
+    }
+    .clear-btn,
+    .zrx-time-picker-icon {
+        position: absolute;
+        right: 3px;
+        top: 50%;
+        transform: translate(0, -50%);
+        border-radius: 50%;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        transition: opacity 0.25s;
+    }
+    .clear-btn {
+        z-index: 1;
+        color: white;
+        background-color: rgb(191, 191, 191);
+        cursor: pointer;
+        &.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        &.hide {
+            opacity: 1;
+            pointer-events: none;
+        }
+        &:before {
+            transform: scale(0.75);
+        }
+    }
+    &.focus {
+        border: 1px solid $primary;
+        box-shadow: $inputShadow;
+    }
+    input {
+        border: none;
+        line-height: 22px;
+        height: 22px;
+        outline: none;
+        background-color: transparent;
+    }
+    .range-input-value {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 32px) minmax(0, 1fr);
+        align-items: center;
+    }
+    .active-dot {
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        background-color: $primary;
+        transition: left 0.15s;
+        pointer-events: none;
+    }
+    &.daterange {
+        .range-input-value {
+            input {
+                border-bottom: none !important;
+            }
+        }
+    }
+    &.dates {
+        background-color: white;
+        input {
+            line-height: 32px;
+            height: 32px;
+        }
+    }
+}
+.zrx-date-time-picker-panel {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transform: scale(1, 0);
+    border-radius: 2px;
+    box-shadow: 0 0 6px getCssVar('black', 0.12);
+    transition:
+        opacity 0.25s,
+        transform 0.25s;
+    z-index: 10;
+    background-color: $white;
+    &.year,
+    &.month,
+    &.date,
+    &.dates,
+    // &.monthrange
+    &.week {
+        width: 280px;
+    }
+    &.year,
+    &.month {
+        .panel-body {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-rows: repeat(4, minmax(0, 66px));
+            align-items: stretch;
+            justify-items: stretch;
+            .year-item,
+            .month-item {
+                position: relative;
+                .num {
+                    font-size: 14px;
+                    height: 24px;
+                    width: 60px;
+                    border-radius: 2px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    text-align: center;
+                    line-height: 24px;
+                    background-color: transparent;
+                    transition: background-color 0.25s;
+                }
+                &:hover {
+                    .num {
+                        background-color: $background;
+                    }
+                }
+                &.current {
+                    .num {
+                        background-color: $primary;
+                        color: white;
+                    }
+                }
+                &.gray {
+                    .num {
+                        color: $--text-color-disabled;
+                    }
+                }
+            }
+        }
+    }
+    &.date,
+    &.dates,
+    &.week,
+    &.datetime,
+    &.daterange,
+    &.monthrange,
+    &.datetimerange {
+        .panel-header {
+            grid-template-columns: repeat(2, minmax(0, 22px)) minmax(0, 1fr) repeat(2, minmax(0, 22px));
+        }
+        .panel-body {
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            grid-auto-rows: minmax(0, 36px);
+            align-items: stretch;
+            justify-items: stretch;
+            .date-item {
+                cursor: pointer;
+                line-height: 36px;
+                text-align: center;
+                font-size: 14px;
+                position: relative;
+                .num {
+                    height: 24px;
+                    display: inline-block;
+                    line-height: 22px;
+                    width: 24px;
+                    position: relative;
+                    z-index: 1;
+                    border: 1px solid transparent;
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    margin: auto 0;
+                    height: 24px;
+                }
+                &:hover {
+                    &:not(.during) {
+                        .num {
+                            background-color: $background;
+                        }
+                    }
+                }
+
+                &.during {
+                    &.current {
+                        // 选中日期的开始和结尾
+                        &.start .num,
+                        &.end .num {
+                            color: $white;
+                            border-radius: 2px;
+                            background-color: $primary;
+                        }
+                    }
+
+                    .num,
+                    &::before {
+                        background-color: $primaryBg;
+                    }
+
+                    &:hover .num {
+                        background-color: $primaryBg;
+                    }
+                }
+
+                &.current {
+                    .num,
+                    &:hover .num {
+                        color: $white;
+                        background-color: $primary;
+                    }
+                }
+                &.different-month {
+                    color: $--text-color-disabled;
+                }
+                &.today {
+                    .num {
+                        border: 1px solid $primary;
+                    }
+                }
+                &.hover-during {
+                    .num,
+                    &::before {
+                        background-color: $primaryBg;
+                    }
+
+                    &.current-hovering:not(.during) .num {
+                        color: $white;
+                        border-radius: 2px;
+                        background-color: $primary;
+                    }
+                }
+
+                &.during.hover-during {
+                    &:before {
+                        border: none;
+                        background-color: $primaryBg;
+                        left: 0;
+                        right: 0;
+                    }
+                }
+                &.disabled {
+                    color: $--text-color-disabled;
+                    cursor: not-allowed;
+                    &:before {
+                        background-color: $fill;
+                    }
+                }
+            }
+        }
+    }
+    &.monthrange {
+        .panel-body {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-rows: repeat(4, minmax(0, 66px));
+            .date-item {
+                position: relative;
+                .num {
+                    width: 60px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                }
+            }
+        }
+    }
+    &.week {
+        .panel-body {
+            .date-item {
+                text-align: center;
+                line-height: 36px;
+                &:hover {
+                    &:not(.during) {
+                        .num {
+                            background-color: transparent;
+                        }
+                    }
+                }
+                &.hover {
+                    &:before {
+                        background-color: $fill;
+                    }
+                }
+                &.current {
+                    .num {
+                        background-color: transparent;
+                        color: white;
+                    }
+                    &:before {
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+    &.date,
+    &.dates,
+    &.datetime {
+        .panel-body {
+            .date-item {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+    &.datetime,
+    &.datetimerange {
+        // width: 428px;
+        display: grid;
+        grid-template-columns: 280px 148px;
+        grid-template-rows: minmax(0, 40px) minmax(0, auto);
+        .panel-header {
+            grid-column-start: 1;
+        }
+        .panel-body {
+            grid-column-start: 1;
+            .date-item {
+                &:before {
+                    background-color: transparent;
+                }
+            }
+        }
+        .time-panel-header {
+            grid-column-start: 2;
+            grid-row-start: 1;
+            text-align: center;
+            line-height: 40px;
+            border-left: 1px solid $border;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: MicrosoftYaHei-Bold;
+            color: $font;
+        }
+        .time-panel-body {
+            grid-column-start: 2;
+            grid-row-start: 2;
+            border-left: 1px solid $border;
+            border-top: 1px solid $border;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-rows: minmax(0, 1fr);
+            .hour,
+            .minute {
+                border-right: 1px solid $border;
+            }
+            .hour,
+            .minute,
+            .second {
+                .el-scrollbar__wrap {
+                    overflow-x: auto;
+                    .time-item {
+                        line-height: 32px;
+                        text-align: center;
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-family: MicrosoftYaHei;
+                        color: $font;
+                        &.current {
+                            background-color: $primaryBg;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.daterange,
+    &.monthrange {
+        width: 560px;
+        grid-template-rows: minmax(0, 40px) minmax(0, 1fr);
+        .panel-header {
+            .panel-header-text {
+                grid-column-start: 3;
+            }
+        }
+    }
+    &.datetimerange {
+        grid-template-rows: minmax(0, 40px) minmax(0, 1fr) minmax(0, 50px);
+    }
+    &.datetimerange,
+    &.datetime {
+        .panel-footer {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            padding: 0 12px;
+            border-top: 1px solid $border;
+            line-height: 48px;
+            text-align: right;
+        }
+    }
+    &.daterange,
+    &.monthrange,
+    &.datetimerange {
+        display: grid;
+        grid-auto-flow: column;
+        .time-panel-header {
+            grid-column-start: 2;
+            grid-row-start: 1;
+        }
+        .time-panel-body {
+            grid-column-start: 2;
+            grid-row-start: 2;
+        }
+    }
+    .panel-header {
+        display: grid;
+        grid-template-columns: minmax(0, 22px) minmax(0, 1fr) minmax(0, 22px);
+        grid-template-rows: minmax(0, 40px);
+        padding: 0 8px;
+        align-items: center;
+        justify-items: center;
+        .prev-btn,
+        .next-btn {
+            cursor: pointer;
+            margin-top: 9px;
+            font-size: 14px;
+            color: $font;
+        }
+        .panel-header-text {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: MicrosoftYaHei-Bold;
+            color: $font;
+        }
+    }
+    .panel-body {
+        display: grid;
+        border-top: 1px solid $border;
+        align-items: center;
+        justify-items: center;
+        padding: 8px 14px;
+        .year-item,
+        .month-item,
+        .date-item {
+            &:not(.week-label) {
+                cursor: pointer;
+            }
+            &.week-label {
+                font-size: 14px;
+                font-weight: 600;
+                font-family: MicrosoftYaHei-Bold;
+                color: $font;
+            }
+        }
+    }
+}
+
+// 日期选择器样式
+.zrx-date-time-picker {
+    padding: 0 0 0 8px !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 28px) !important;
+    // 年选择框
+    &.year {
+        border: 1px solid $border;
+        border-radius: 2px;
+        background: $white;
+        align-content: center;
+        &.focus {
+            border: 1px solid $primary;
+            box-shadow: $inputShadow;
+        }
+        input {
+            height: 20px;
+            margin: 6px 0;
+            line-height: 20px;
+        }
+    }
+    // 月选择框
+    &.month {
+        border: 1px solid $border;
+        border-radius: 2px;
+        background: $white;
+        align-content: center;
+        // padding: 0 4px 0 8px;
+        &.focus {
+            border: 1px solid $primary;
+            box-shadow: $inputShadow;
+        }
+        input {
+            height: 20px;
+            margin: 6px 0;
+            line-height: 20px;
+        }
+    }
+    // 日选择框
+    &.date {
+        border: 1px solid $border;
+        border-radius: 2px;
+        background: $white;
+        align-content: center;
+        // padding: 0 4px 0 8px;
+        &.focus {
+            border: 1px solid $primary;
+            box-shadow: $inputShadow;
+        }
+        input {
+            height: 20px;
+            margin: 6px 0;
+            line-height: 20px;
+        }
+    }
+    // 周选择框
+    &.week {
+        border: 1px solid $border;
+        border-radius: 2px;
+        background: $white;
+        align-content: center;
+        &.focus {
+            border: 1px solid $primary;
+            box-shadow: $inputShadow;
+        }
+        input {
+            height: 20px;
+            margin: 6px 0;
+            line-height: 20px;
+        }
+    }
+    // 日期时间选择框
+    &.datetime {
+        border: 1px solid $border;
+        border-radius: 2px;
+        background: $white;
+        align-content: center;
+        &.focus {
+            border: 1px solid $primary;
+            box-shadow: $inputShadow;
+        }
+        input {
+            height: 20px;
+            margin: 6px 0;
+
+            line-height: 20px;
+        }
+    }
+    // 日期范围选择框
+    &.daterange {
+        padding: 0 !important;
+        border: 1px solid $border;
+        border-radius: 2px;
+        background: $white;
+        align-content: center;
+        &.focus {
+            border: 1px solid $primary;
+            box-shadow: $inputShadow;
+        }
+        .range-input-value {
+            padding: 0 0 0 8px !important;
+            grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) !important;
+            input {
+                &:focus {
+                    border-bottom: 1px solid $primary;
+                }
+                height: 31px;
+                padding: 6px 0;
+                line-height: 31px;
+                vertical-align: top;
+                text-align: center !important;
+            }
+            .icon {
+                mask-image: url("../svg-icon/auto-import/minus-small.svg");
+                width: 24px;
+                height: 24px;
+                margin: 4px 0;
+                background-color: $font;
+                &::before {
+                    content: none;
+                }
+            }
+        }
+        &.focus {
+            .active-dot {
+                display: none;
+            }
+        }
+    }
+    // 日期事件范围选择框
+    &.datetimerange {
+        padding: 0 !important;
+        border: 1px solid $border;
+        border-radius: 2px;
+        align-content: center;
+        background: $white;
+        &.focus {
+            border: 1px solid $primary;
+            box-shadow: $inputShadow;
+        }
+        .range-input-value {
+            padding: 0 0 0 8px !important;
+            grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) !important;
+            input {
+                &:focus {
+                    border-bottom: 1px solid $primary;
+                }
+                height: 31px;
+                padding: 6px 0;
+                line-height: 31px;
+                vertical-align: top;
+                text-align: center !important;
+            }
+            .icon {
+                mask-image: url("../svg-icon/auto-import/minus-small.svg");
+                width: 24px;
+                height: 24px;
+                margin: 4px 0;
+                background-color: $font;
+                &::before {
+                    content: none;
+                }
+            }
+        }
+        &.focus {
+            .active-dot {
+                display: none;
+            }
+        }
+    }
+
+    // 清空按钮
+    .clear-btn {
+        + .svg-icon {
+            display: none;
+        }
+
+        &.visible {
+            &.zrx-icon-close {
+                width: 24px;
+                height: 24px;
+                mask-image: url("../svg-icon/auto-import/close-round.svg");
+                background-color: $fontLight;
+                &::before {
+                    content: none;
+                }
+            }
+        }
+        &.hide {
+            &.zrx-icon-close {
+                width: 24px;
+                height: 24px;
+                mask-image: url("../svg-icon/auto-import/calendar.svg");
+                background-color: $fontLight;
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+    // 右边的日历icon
+    .zrx-time-picker-icon {
+        background-color: $fontLight;
+    }
+}
+// 弹出的时间选择器弹框
+.zrx-date-time-picker-panel {
+    box-shadow:
+        0 1px 2px -4px getCssVar('font', 0.08),
+        0 6px 12px 2px getCssVar('font', 0.05),
+        0 12px 24px 4px getCssVar('font', 0.02) !important;
+    .panel-header {
+        .prev-btn {
+            &.svg-icon {
+                background-color: getCssVar('font', 0.3);
+            }
+        }
+        .next-btn {
+            &.svg-icon {
+                background-color: getCssVar('font', 0.3);
+            }
+        }
+    }
+    // 弹出的时间选择器弹框 年
+    &.year {
+        width: 272px;
+        border: 1px solid $border;
+        border-radius: 2px;
+        .panel-header {
+            padding: 0 12px;
+            align-items: normal;
+            .prev-btn {
+                &.svg-icon {
+                    background-color: getCssVar('font', 0.3);
+                }
+            }
+            .panel-header-text {
+                height: 20px;
+                margin: 12px 0 8px 0;
+                text-align: center;
+                font-size: 14px;
+                color: $font;
+                line-height: 20px;
+                font-weight: 700;
+            }
+        }
+        .panel-body {
+            padding: 7px 0;
+            grid-template-rows: repeat(4, minmax(0, 54px)) !important;
+            .year-item {
+                height: 54px;
+                .num {
+                    width: 80px;
+                    margin: 15px 5px;
+                }
+                &.current {
+                    .num {
+                        width: 80px;
+                    }
+                }
+                &:hover {
+                    .num {
+                        width: 80px;
+                        background-color: $background;
+                    }
+                }
+                &.gray {
+                    &:hover {
+                        .num {
+                            background-color: transparent;
+                        }
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+    // 弹出的时间选择器弹框 月
+    &.month {
+        border: 1px solid $border;
+        @include dropdown-shadow;
+        border-radius: 2px;
+        width: 272px !important;
+        .panel-header {
+            padding: 0 12px;
+            align-items: normal;
+            .panel-header-text {
+                height: 20px;
+                margin: 12px 0 8px 0;
+                text-align: center;
+                font-size: 14px;
+                color: $font;
+                line-height: 20px;
+                font-weight: 700;
+            }
+        }
+        .panel-body {
+            padding: 7px 0;
+            grid-template-rows: repeat(4, minmax(0, 54px)) !important;
+            .month-item {
+                height: 54px;
+                .num {
+                    width: 80px !important;
+                    margin: 15px 5px !important;
+                }
+                &.current {
+                    .num {
+                        width: 80px;
+                    }
+                }
+            }
+        }
+    }
+    // 弹出的时间选择器弹框 日
+    &.date {
+        border: 1px solid $border;
+        @include dropdown-shadow;
+        border-radius: 2px;
+        width: 272px !important;
+        .panel-header {
+            padding: 0 11px;
+            align-items: normal;
+
+            .panel-header-text {
+                height: 20px;
+                margin: 12px 0 8px 0;
+                text-align: center;
+                font-size: 14px;
+                color: $font;
+                line-height: 20px;
+                font-weight: 700;
+            }
+        }
+        .panel-body {
+            padding: 10px;
+            grid-template-columns: repeat(7, 36px) !important;
+            .date-item {
+                .num {
+                    border-radius: 2px;
+                    &:hover {
+                        background-color: $background;
+                    }
+                }
+            }
+        }
+    }
+    // 弹出的时间选择器弹框 星期
+    &.week {
+        border: 1px solid $border;
+        @include dropdown-shadow;
+        border-radius: 2px;
+        width: 272px !important;
+        .panel-header {
+            padding: 0 12px;
+            align-items: normal;
+
+            .panel-header-text {
+                height: 20px;
+                margin: 12px 0 8px 0;
+                text-align: center;
+                font-size: 14px;
+                color: $font;
+                line-height: 20px;
+                font-weight: 700;
+            }
+        }
+        .panel-body {
+            padding: 10px;
+            grid-template-columns: repeat(7, 36px) !important;
+            .date-item {
+                .num {
+                    border-radius: 2px;
+                }
+                &.same-month {
+                    &.current {
+                        &:nth-child(7n + 1) {
+                            &::before {
+                                left: 8px;
+                            }
+                        }
+                        &:nth-child(7n) {
+                            &::before {
+                                right: 8px;
+                            }
+                        }
+
+                        &:hover {
+                            .num {
+                                background-color: $primary;
+                            }
+                        }
+                    }
+                }
+                &.different-month {
+                    &:nth-child(7n + 1) {
+                        &::before {
+                            left: 8px;
+                        }
+                    }
+                    &:nth-child(7n) {
+                        &:hover {
+                            .num {
+                                background-color: $primary;
+                            }
+                        }
+                        &::before {
+                            right: 8px;
+                        }
+                    }
+                }
+                &.hover {
+                    &:not(.current) {
+                        &::before {
+                            background-color: $background !important;
+                        }
+                    }
+
+                    &.same-month {
+                        &:nth-child(7n + 1) {
+                            &::before {
+                                left: 8px;
+                                border-radius: 2px 0 0 2px;
+                            }
+                        }
+                        &:nth-child(7n) {
+                            &::before {
+                                right: 8px;
+                                border-radius: 0 2px 2px 0;
+                            }
+                        }
+                    }
+                    &.different-month {
+                        &:nth-child(7n + 1) {
+                            &::before {
+                                left: 8px;
+                                border-radius: 2px 0 0 2px;
+                            }
+                        }
+                        &:nth-child(7n) {
+                            &::before {
+                                right: 8px;
+                                border-radius: 0 2px 2px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 弹出的时间选择器弹框 日期时间
+    &.datetime {
+        border: 1px solid $border;
+        border-radius: 2px;
+        grid-template-columns: 272px 148px !important;
+        .panel-header {
+            padding: 0 12px;
+            align-items: normal;
+            .panel-header-text {
+                height: 20px;
+                margin: 12px 0 8px 0;
+                text-align: center;
+                font-size: 14px;
+                color: $font;
+                line-height: 20px;
+                font-weight: 700;
+            }
+        }
+        .panel-body {
+            padding: 10px 10px 0;
+            .date-item {
+                .num {
+                    border-radius: 2px;
+                    &:hover {
+                        background-color: $background;
+                    }
+                }
+            }
+        }
+        .panel-footer {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 40px;
+            padding: 0 4px 0 8px !important;
+            .el-button {
+                &.el-button--primary {
+                    --zrx-btn-min-width: 44px;
+                }
+            }
+        }
+        .time-panel-header {
+            height: 40px;
+            padding: 12px 0 8px 0;
+            border-left: 1px solid $border;
+            text-align: center;
+            font-size: 14px;
+            color: $font !important;
+            line-height: 20px !important;
+            font-weight: 700 !important;
+        }
+        .time-panel-body {
+            .el-scrollbar {
+                .current {
+                    background-color: $primaryBg !important;
+                    &:hover {
+                        background-color: $background;
+                    }
+                }
+                &.second {
+                    .el-scrollbar__wrap {
+                        .el-scrollbar__view {
+                            .time-item {
+                                border-radius: 0 2px 2px 0;
+                                &.current {
+                                    background-color: $primaryBg !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.minute {
+                    .el-scrollbar__wrap {
+                        .el-scrollbar__view {
+                            .time-item {
+                                border-radius: 0 2px 2px 0;
+                                &.current {
+                                    background-color: $primaryBg !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.hour {
+                    .el-scrollbar__wrap {
+                        .el-scrollbar__view {
+                            .time-item {
+                                border-radius: 2px 0 0 2px;
+                                &.current {
+                                    background-color: $primaryBg !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 弹出的时间选择器弹框 日期范围
+    &.daterange {
+        width: 545px !important;
+        border: 1px solid $border;
+        border-radius: 2px;
+        .panel-header {
+            padding: 0 12px;
+            align-items: normal;
+
+            .panel-header-text {
+                height: 20px;
+                margin: 12px 0 8px 0;
+                text-align: center;
+                font-size: 14px;
+                color: $font;
+                line-height: 20px;
+                font-weight: 700;
+            }
+        }
+
+        .panel-body {
+            &:nth-child(2) {
+                border-right: 1px solid $border;
+            }
+            padding: 9px;
+            .date-item {
+                .num {
+                    border-radius: 2px;
+                }
+                &:not(.current) {
+                    &:hover {
+                        .num {
+                            background-color: $background !important;
+                        }
+                    }
+                }
+
+                &.start-hover-during {
+                    &::before {
+                        left: 0 !important;
+                        background-color: $primaryBg;
+                    }
+                }
+                &.end-hover-during {
+                    &::before {
+                        right: 0 !important;
+                        background-color: $primaryBg;
+                    }
+                }
+            }
+        }
+    }
+    // 弹出的时间选择器弹框 日期时间范围
+    &.datetimerange {
+        border: 1px solid $border;
+        border-radius: 2px;
+        grid-template-columns: 272px 148px !important;
+        grid-template-rows: minmax(0, 40px) minmax(0, 1fr) minmax(0, 40px) !important;
+        .panel-header {
+            padding: 0 12px;
+            align-items: normal;
+
+            .panel-header-text {
+                text-align: center;
+                font-size: 14px;
+                color: $font;
+                height: 20px;
+                line-height: 20px;
+                margin: 12px 0 8px 0;
+                font-weight: 700;
+            }
+        }
+        .panel-body {
+            padding: 10px 10px 0;
+            .date-item {
+                .num {
+                    border-radius: 2px;
+                    &:hover {
+                        background-color: $background;
+                    }
+                }
+
+                &.start-hover-during {
+                    &::before {
+                        left: 0 !important;
+                        background-color: $primaryBg;
+                    }
+                }
+                &.end-hover-during {
+                    &::before {
+                        right: 0 !important;
+                        background-color: $primaryBg;
+                    }
+                }
+            }
+        }
+        .panel-footer {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 40px;
+            padding: 0 4px 0 8px !important;
+            .el-button {
+                &.el-button--primary {
+                    --zrx-btn-min-width: 44px;
+                }
+            }
+        }
+        .time-panel-header {
+            height: 40px;
+            padding: 12px 0 8px 0;
+            border-left: 1px solid $border;
+            text-align: center;
+            font-size: 14px;
+            color: $font !important;
+            line-height: 20px !important;
+            font-weight: 700 !important;
+        }
+        .time-panel-body {
+            padding: 2px 2px 0;
+            .el-scrollbar {
+                .current {
+                    background-color: $primaryBg !important;
+                    &:hover {
+                        background-color: $background;
+                    }
+                }
+                &.second {
+                    .el-scrollbar__wrap {
+                        .el-scrollbar__view {
+                            .time-item {
+                                &.current {
+                                    background-color: $primaryBg !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.minute {
+                    .el-scrollbar__wrap {
+                        .el-scrollbar__view {
+                            .time-item {
+                                &.current {
+                                    background-color: $primaryBg !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.hour {
+                    .el-scrollbar__wrap {
+                        .el-scrollbar__view {
+                            .time-item {
+                                &.current {
+                                    background-color: $primaryBg !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.flex-center {
+    @include flex-center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-auto {
+    flex: 1 1 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.text-ellipsis {
+    @include ellipsis;
+}
+
+.line-clamp-more {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--zrx-line-clamp, 2);
+    -webkit-box-orient: vertical;
+}
+
+.zrx-color-primary {
+    color: getCssVar('primary');
+}
+
+.zrx-color-success {
+    color: getCssVar('success');
+}
+
+.zrx-color-warning {
+    color: getCssVar('warning');
+}
+
+.zrx-color-error {
+    color: getCssVar('error');
+}
+
+.zrx-color-gray {
+    color: getCssVar('gray');
+}

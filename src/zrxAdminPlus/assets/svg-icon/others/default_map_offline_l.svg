@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>img/default_map_offline_l</title>
+    <g id="img/default_map_offline_l" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="09_Common_Default/default_map_offline_l" transform="translate(6.000000, 6.000000)" fill="#3B4155">
+            <path d="M35.5,27 C40.1944204,27 44,30.8055796 44,35.5 C44,40.1944204 40.1944204,44 35.5,44 C30.8055796,44 27,40.1944204 27,35.5 C27,30.8055796 30.8055796,27 35.5,27 Z M41,34 L30,34 L30,37 L41,37 L41,34 Z" id="Combined-Shape-Copy-3" fill-rule="nonzero" opacity="0.3"></path>
+            <path d="M42.6,0.4 L42.600416,27.7228134 C40.7311959,26.0087363 38.2379807,24.962373 35.5,24.962373 C29.7010101,24.962373 25,29.6561927 25,35.4463127 C25,37.8157476 25.7872372,40.0015947 27.1148012,41.757321 L14.6,36.3502613 L0.6,42.4 L0.6,5.38702706 L14.6,0.4 L28.6,5.38702706 L42.6,0.4 Z" id="Combined-Shape" opacity="0.0799999982"></path>
+            <path d="M14.6,0.4 L28.6,5.4 L28.600498,27.5848219 C26.3941264,29.5096781 25,32.3420312 25,35.5 C25,37.8360204 25.762851,39.9938674 27.0530261,41.7380139 L14.6,36.4 L14.6,0.4 Z" id="Combined-Shape" opacity="0.0799999982"></path>
+        </g>
+    </g>
+</svg>

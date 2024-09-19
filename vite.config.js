@@ -41,7 +41,7 @@ export default defineConfig({
         },
         preprocessorOptions: {
             scss: {
-                additionalData: `@import "@/assets/style/variable.scss";@import "zrx-admin-plus/src/assets/style/common/variable.scss";`
+                additionalData: `@import "@/assets/style/variable.scss";@import "@/zrxAdminPlus/assets/style/common/variable.scss";`
             }
         }
     },

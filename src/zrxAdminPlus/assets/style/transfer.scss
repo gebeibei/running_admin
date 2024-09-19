@@ -1,0 +1,266 @@
+.zrx-transfer {
+    --zrx-transfer-width: 692px;
+    --zrx-transfer-height: 480px;
+    width: var(--zrx-transfer-width);
+    height: var(--zrx-transfer-height);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 80px minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    &[type='list'] {
+        --zrx-transfer-width: 560px;
+        --zrx-transfer-height: 320px;
+    }
+    .zrx-transfer-btns {
+        @include flex-center;
+        flex-direction: column;
+
+        > div {
+            @include flex-center;
+            flex-direction: column;
+        }
+
+        .zrx-transfer-action-btn {
+            width: 48px;
+            height: 32px;
+            border: 1px solid $border;
+            border-radius: 2px;
+            @include flex-center;
+            cursor: pointer;
+
+            &.btn-left {
+                margin-bottom: 12px;
+            }
+
+            &.is-disabled {
+                cursor: not-allowed;
+                background-color: $fill;
+                border: 1px solid $fill;
+                > i {
+                    opacity: 0.3;
+                }
+            }
+        }
+    }
+}
+
+.zrx-transfer-panel {
+    border: 1px solid $border;
+    padding: 16px 12px 0;
+    background: #fff;
+    &.is-list-type {
+        padding: 8px 12px 0 8px;
+        .zrx-transfer-title {
+            line-height: 32px;
+            vertical-align: middle;
+            margin-bottom: 8px;
+            > label {
+                vertical-align: middle;
+            }
+        }
+        .zrx-transfer-search {
+            margin-left: 4px;
+            width: calc(100% - 4px);
+        }
+        .zrx-transfer-container {
+            height: calc(100% - 48px - 40px);
+            &.no-search {
+                height: calc(100% - 48px);
+            }
+        }
+        .zrx-transfer-item {
+            height: 32px;
+            margin-bottom: 2px;
+            border-bottom: none;
+            .el-checkbox {
+                margin: 0;
+            }
+            .svg-icon {
+                margin-left: 0;
+            }
+        }
+        .t-table__row {
+            height: 32px;
+            width: calc(100% - 32px);
+            .t-table__cell {
+                height: 32px;
+                .cell {
+                    height: 32px;
+                    line-height: 32px;
+                    padding-left: 0;
+                }
+                &.first {
+                    .cell {
+                        padding-left: calc(46px - 8px);
+                    }
+                }
+            }
+        }
+    }
+    .zrx-transfer-title {
+        font-size: 14px;
+        color: $font;
+        letter-spacing: 0;
+        line-height: 20px;
+        margin-bottom: 12px;
+        > span {
+            float: right;
+        }
+    }
+
+    .zrx-transfer-search {
+        margin-bottom: 8px;
+    }
+
+    .zrx-transfer-container {
+        height: calc(100% - 32px - 40px - 48px);
+
+        &.no-search {
+            height: calc(100% - 32px - 48px);
+        }
+
+        .zrx-transfer-empty-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: getCssVar('font', 0.3);
+        }
+    }
+    .zrx-transfer-item {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $border;
+        width: calc(100%);
+        &.group {
+            .svg-icon {
+                flex-shrink: 0;
+            }
+            > span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 14px;
+            }
+        }
+        .el-checkbox {
+            margin: 0 4px;
+        }
+        .svg-icon {
+            margin-left: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            &.isExpand {
+                transform: rotate(0deg);
+            }
+        }
+    }
+    .zrx-transfer-header {
+        background: $fill;
+        border-radius: 2px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+
+        .el-checkbox {
+            height: 40px;
+            line-height: 40px;
+            margin: 0 4px;
+        }
+    }
+    .t-table__row {
+        width: calc(100% - 40px);
+        height: 40px;
+        &.header {
+            .t-table__cell {
+                &::before {
+                    opacity: 0.2;
+                }
+                .cell {
+                    font-weight: 600;
+                }
+            }
+        }
+        .t-table__cell {
+            height: 40px;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 16px;
+                background-color: $font;
+                opacity: 0;
+            }
+            .cell {
+                font-size: 14px;
+                height: 40px;
+                line-height: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+                color: $font;
+                width: auto;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &.first {
+                .cell {
+                    padding-left: 46px;
+                }
+            }
+        }
+    }
+
+    .el-scrollbar {
+        right: 0;
+        bottom: 0;
+        ::v-deep .el-scrollbar__wrap {
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+        ::v-deep .el-scrollbar__bar {
+            border-radius: 0;
+            &:hover {
+                &.is-horizontal {
+                    .el-scrollbar__thumb {
+                        height: 8px;
+                        margin-top: 2px;
+                        border-radius: 4px;
+                    }
+                }
+                &.is-vertical {
+                    .el-scrollbar__thumb {
+                        width: 8px;
+                        border-radius: 4px;
+                    }
+                }
+            }
+
+            &.is-horizontal {
+                height: 12px;
+                .el-scrollbar__thumb {
+                    height: 4px;
+                    margin-top: 4px;
+                    border-radius: 2px;
+                }
+            }
+            &.is-vertical {
+                width: 12px;
+                .el-scrollbar__thumb {
+                    margin: auto;
+                    width: 4px;
+                    border-radius: 2px;
+                }
+            }
+        }
+    }
+}

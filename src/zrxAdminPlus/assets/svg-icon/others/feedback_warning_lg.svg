@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>06_Common_Feedback/common_feedback_warning_lg</title>
+    <g id="06_Common_Feedback/common_feedback_warning_lg" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" x="0" y="0" width="40" height="40"></rect>
+        <path d="M18.7817206,3.6945 C19.3327206,2.7685 20.6667206,2.7685 21.2177206,3.6945 L21.2177206,3.6945 L39.7947206,34.8355 C40.3627206,35.7875 39.6817206,36.9995 38.5767206,36.9995 L38.5767206,36.9995 L1.42272065,36.9995 C0.317720649,36.9995 -0.363279351,35.7875 0.204720649,34.8355 L0.204720649,34.8355 Z M21,29 L19,29 L19,31 L21,31 L21,29 Z M20,12 C19.4501992,12 19,12.4485466 19,12.9990806 L19,12.9990806 L19,24.9989391 C19,25.5494731 19.4501992,26 20,26 C20.5498008,26 21,25.5504633 21,24.9989391 L21,24.9989391 L21,12.9990806 C21,12.4495367 20.5498008,12 20,12 Z" id="Color" fill="#FF952C" fill-rule="nonzero"></path>
+    </g>
+</svg>

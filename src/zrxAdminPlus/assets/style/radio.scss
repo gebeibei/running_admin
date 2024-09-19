@@ -1,0 +1,55 @@
+.el-radio:not(.el-origin) {
+    --el-radio-input-border-color-hover: #{getCssVar('primary-hover')};
+
+    .el-radio__input {
+        width: var(--zrx-radio-input-size, 24px);
+        height: var(--zrx-radio-input-size, 24px);
+        @include flex-center;
+
+        .el-radio__inner {
+            &:hover {
+                --el-radio-input-bg-color: #{getCssVar('primary-bg')};
+            }
+        }
+    }
+
+    .el-radio__label {
+        padding-left: 4px;
+    }
+
+    &.is-checked:not(.is-disabled) {
+        --el-radio-input-bg-color: #{$white};
+
+        .el-radio__label {
+            color: $font;
+        }
+
+        .el-radio__inner {
+            border-color: $border;
+            background: var(--el-radio-input-bg-color);
+
+            &:hover {
+                border-color: var(--el-radio-input-border-color-hover);
+            }
+
+            &::after {
+                width: var(--zrx-radio-checked-inner-size, 6px);
+                height: var(--zrx-radio-checked-inner-size, 6px);
+                background-color: $primary;
+            }
+        }
+    }
+
+    &.is-disabled {
+        --zrx-radio-checked-inner-size: 8px;
+
+        .el-radio__inner {
+            border-color: $border;
+
+            &::after {
+                width: var(--zrx-radio-checked-inner-size);
+                height: var(--zrx-radio-checked-inner-size);
+            }
+        }
+    }
+}

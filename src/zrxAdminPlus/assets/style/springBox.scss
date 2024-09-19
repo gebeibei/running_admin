@@ -1,0 +1,12 @@
+.zrx-spring-box {
+    overflow: hidden;
+    &.auto-height {
+        height: auto;
+    }
+    &.trans-start {
+        transition: height 0.2s ease-out;
+    }
+    &.heighted {
+        height: var(--zrx-spring-box-height);
+    }
+}

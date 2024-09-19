@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>img/default_no_result_l</title>
+    <g id="img/default_no_result_l" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="default_update" transform="translate(-1.000000, -1.000000)">
+            <g id="Group" transform="translate(1.000000, 1.000000)">
+                <polygon id="shape" points="0 0 56 0 56 56 0 56"></polygon>
+                <g id="default" transform="translate(9.000000, 4.000000)" fill="#3B4155">
+                    <path d="M4,0 L24,0 L24,0 L38,13.9995117 L38,44 C38,46.209139 36.209139,48 34,48 L4,48 C1.790861,48 2.705415e-16,46.209139 0,44 L0,4 C-2.705415e-16,1.790861 1.790861,-1.37054459e-15 4,0 Z" id="Rectangle-9" opacity="0.0799999982"></path>
+                    <polygon id="Path" opacity="0.0799999982" points="24 14 24 0 38 14"></polygon>
+                    <path d="M18,18 C22.418278,18 26,21.581722 26,26 C26,27.8541561 25.3692193,29.5609854 24.3105423,30.9176038 L28.2891586,34.8966125 L25.8142849,37.3714863 L21.5925998,33.1498974 C20.5123495,33.6937547 19.2919385,34 18,34 C13.581722,34 10,30.418278 10,26 C10,21.581722 13.581722,18 18,18 Z M18,21.5 C15.5147186,21.5 13.5,23.5147186 13.5,26 C13.5,28.4852814 15.5147186,30.5 18,30.5 C20.4852814,30.5 22.5,28.4852814 22.5,26 C22.5,23.5147186 20.4852814,21.5 18,21.5 Z" id="Combined-Shape" fill-rule="nonzero" opacity="0.24"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

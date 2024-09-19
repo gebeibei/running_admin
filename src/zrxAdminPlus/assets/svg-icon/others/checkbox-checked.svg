@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="7px" viewBox="0 0 10 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>路径</title>
+    <defs>
+        <path d="M10.8044344,14.0168557 L15.6780673,9.26615083 C15.9540622,8.94048717 16.4314325,8.90937065 16.7443038,9.19665013 C17.0571751,9.48392961 17.0870694,9.9808182 16.8110745,10.3064819 L11.3639727,15.7338586 C11.060806,16.091584 10.5239337,16.0881988 10.2249529,15.7266766 L7.18291667,13.0483022 C6.91073247,12.7191821 6.94640784,12.2227069 7.26259985,11.9393939 C7.57879185,11.656081 8.055765,11.693215 8.3279492,12.0223351 L10.8044344,14.0168557 Z" id="path-1"></path>
+    </defs>
+    <g id="1.1管理端_迭代一" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.6邮件服务_模板管理_穿梭框" transform="translate(-251.000000, -580.000000)">
+            <g id="Group-2备份-4" transform="translate(232.000000, 445.000000)">
+                <g id="编组-8备份-12" transform="translate(8.000000, 122.000000)">
+                    <g id="checkbox" transform="translate(4.000000, 4.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="路径" fill="#405FFE" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

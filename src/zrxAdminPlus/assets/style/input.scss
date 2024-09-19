@@ -1,0 +1,130 @@
+@use "sass:math";
+
+.el-input:not(.el-origin) {
+    &.is-disabled {
+        .el-input__wrapper {
+            box-shadow: none;
+            border: solid 1px $border;
+        }
+    }
+    .el-input__inner {
+        &[type="password"], &[type="text"] {
+            +.el-input__suffix {
+                .el-input__password {
+                    width: 24px;
+                    height: 24px;
+                    margin-left: 0;
+                    margin-right: -4px;
+                    mask-size: 24px 24px;
+                    background-color: #{getCssVar("font", 0.7)};
+                    svg {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &[type="password"] {
+            +.el-input__suffix {
+                .el-input__password {
+                    mask-image: url("~@/assets/svg-icon/auto-import/closed-eye.svg");
+                }
+            }
+        }
+        &[type="text"] {
+            +.el-input__suffix {
+                .el-input__password {
+                    mask-image: url("~@/assets/svg-icon/auto-import/eye.svg");
+                }
+            }
+        }
+    }
+    .el-input__wrapper {
+        padding: 0 var(--zrx-input-padding-x, 7px);
+        box-shadow: none;
+        border: solid 1px $border;
+
+        .el-input__count {
+            --el-color-info: var(--el-text-color-placeholder);
+        }
+        &.is-focus {
+            box-shadow: $inputShadow;
+        }
+    }
+
+    &:not(.is-disabled) {
+        .el-input__wrapper {
+            &:active,
+            &:focus,
+            &.is-focus {
+                --zrx-border: var(--zrx-primary);
+            }
+        }
+    }
+
+    &.el-input--suffix {
+        .el-input__suffix {
+            .el-input__suffix-inner {
+                order: 1;
+                :nth-child(1) {
+                    order: 3;
+                }
+                :nth-child(2) {
+                    order: 2;
+                }
+                .el-input__count {
+                    order: 1;
+                }
+                .svg-icon + .el-input__clear.el-input__icon {
+                    right: -6px;
+                }
+                .el-input__icon {
+                    cursor: pointer;
+
+                    &.el-input__clear,
+                    &.icon-circle-close,
+                    &.icon-arrow-down {
+                        width: 24px;
+                        height: 24px;
+                        background-color: #{getCssVar("font", 0.7)};
+
+                        position: relative;
+                        right: -4px;
+                        z-index: 10;
+                        svg {
+                            display: none;
+                        }
+                    }
+
+                    &.el-input__clear,
+                    &.icon-circle-close {
+                        mask-image: url("../svg-icon/auto-import/close-round.svg");
+                    }
+
+                    &.icon-arrow-down {
+                        mask-image: url("../svg-icon/auto-import/down-angle.svg");
+                    }
+                }
+            }
+        }
+    }
+}
+
+.el-textarea:not(.el-origin) {
+    .el-textarea__inner {
+        box-shadow: none;
+        border: solid 1px $border;
+        padding: var(--zrx-textarea-padding-y, 5px) var(--zrx-textarea-padding-x, 7px);
+    }
+
+    &:not(.is-disabled) {
+        &:active,
+        &:focus,
+        &.is-focus {
+            --zrx-border: var(--zrx-primary);
+        }
+    }
+
+    .el-input__count {
+        --el-color-info: var(--el-text-color-placeholder);
+    }
+}

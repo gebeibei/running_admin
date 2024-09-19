@@ -1,0 +1,108 @@
+.el-message:not(.el-origin) {
+    --el-message-padding: 7px 4px;
+    --zrx-message-icon-width: 24px;
+    --zrx-message-min-width: 436px;
+    --zrx-message-min-btn-width: 56px;
+    min-width: var(--zrx-message-min-width);
+    .el-message__content {
+        width: calc(100% - var(--zrx-message-icon-width) - 8px);
+        line-height: var(--zrx-message-icon-width);
+    }
+    .el-icon {
+        width: var(--zrx-message-icon-width);
+        height: var(--zrx-message-icon-width);
+    }
+    .el-message__closeBtn {
+        background-color: rgba(var(--zrx-font), 1);
+        mask-image: url('../svg-icon/auto-import/close.svg');
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat;
+        mask-position: center center;
+        &:hover {
+            background-color: rgba(var(--zrx-primary), 1);
+        }
+        > svg {
+            display: none;
+        }
+    }
+    &.el-message--success {
+        --el-message-bg-color: rgba(var(--zrx-success-bg), 1);
+        --el-message-border-color: rgba(var(--zrx-success-border), 1);
+        --el-message-text-color: rgba(var(--zrx-font), 1);
+    }
+    &.el-message--warning {
+        --el-message-bg-color: rgba(var(--zrx-warning-bg), 1);
+        --el-message-border-color: rgba(var(--zrx-warning-border), 1);
+        --el-message-text-color: rgba(var(--zrx-font), 1);
+    }
+    &.el-message--error {
+        --el-message-bg-color: rgba(var(--zrx-error-bg), 1);
+        --el-message-border-color: rgba(var(--zrx-error-border), 1);
+        --el-message-text-color: rgba(var(--zrx-font), 1);
+    }
+    &.el-message--info {
+        --el-message-bg-color: rgba(var(--zrx-primary-bg), 1);
+        --el-message-border-color: rgba(var(--zrx-primary-border), 1);
+        --el-message-text-color: rgba(var(--zrx-font), 1);
+    }
+    /*存在自定义扩展*/
+    &.zrx-com-message {
+        --el-message-padding: 8px 4px 8px 4px;
+        .el-icon {
+            min-width: var(--zrx-message-icon-width);
+            margin-top: calc((32px - var(--zrx-message-icon-width)) / 2);
+            align-self: self-start;
+        }
+        &:not(.has-title){
+            .el-icon {
+                margin-top: 0;
+            }
+        }
+        .message-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .message-title {
+                font-size: 16px;
+                color: #3b4155;
+                line-height: 32px;
+                font-weight: 400;
+            }
+            .message-info {
+                margin-top: 2px;
+                margin-bottom: 8px;
+                font-size: 14px;
+                line-height: var(--zrx-message-icon-width);
+                font-weight: 400;
+                color: rgba(var(--zrx-font), 0.7);
+            }
+            .message-header {
+                padding-right: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & + .message-info {
+                    padding-right: 8px;
+                }
+                .message-info {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                > a {
+                    min-width: var(--zrx-message-min-btn-width);
+                    color: rgba(var(--zrx-primary), 1);
+                    text-align: right;
+                }
+            }
+        }
+    }
+    /*存在全局信息提示*/
+    &.zrx-g-message {
+        --el-message-border-color: transparent;
+        --el-message-bg-color: #fff;
+        background: var(--el-message-bg-color);
+        box-shadow:
+            0 0 16px 0 rgba(0, 0, 0, 0.2),
+            0 16px 32px 0 rgba(0, 0, 0, 0.12);
+    }
+}

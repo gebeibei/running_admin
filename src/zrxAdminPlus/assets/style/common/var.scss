@@ -1,0 +1,46 @@
+@use 'sass:map';
+
+@function getCssVarName($type) {
+    @return '--zrx-' + $type;
+}
+
+@function getRgb($color) {
+    @return red($color), green($color), blue($color);
+}
+
+$vars: 'font', 'background', 'fill', 'border', 'white', 'black', 'secondary';
+:root {
+    @each $type in $zrxTypes {
+        #{getCssVarName($type)}: getRgb(map.get($zrxColors, $type, 'base'));
+        #{getCssVarName($type) + '-sel'}: getRgb(map.get($zrxColors, $type, 'sel'));
+        #{getCssVarName($type) + '-hover'}: getRgb(map.get($zrxColors, $type, 'hover'));
+        #{getCssVarName($type) + '-border'}: getRgb(map.get($zrxColors, $type, 'border'));
+        #{getCssVarName($type) + '-bg'}: getRgb(map.get($zrxColors, $type, 'bg'));
+        #{'--el-color-' + $type}: rgba(var(#{getCssVarName($type)}), 1);
+    }
+
+    #{getCssVarName('gray')}: getRgb(map.get($zrxColors, 'gray', 'base'));
+    #{getCssVarName('gray') + '-sel'}: getRgb(map.get($zrxColors, 'gray', 'sel'));
+    #{getCssVarName('gray') + '-hover'}: getRgb(map.get($zrxColors, 'gray', 'hover'));
+
+    @each $type in $vars {
+        #{getCssVarName($type)}: getRgb(map.get($zrxColors, $type));
+    }
+    --zrx-menu-bg: linear-gradient(167deg, #eef3fe 0%, #eef3ff 40%, #eff4fa 74%, #e6ebfb 100%);
+    --zrx-primary-shadow: #{getRgb(map.get($zrxColors, 'primary-shadow'))};
+    // 重置值
+    --el-border-radius-base: 2px;
+    --el-popover-border-radius: 2px;
+    --el-border-color: #{$border};
+    --el-border-color-hover: #{$border};
+    --el-border-color-light: #{$border};
+    --el-text-color-regular: #{$font};
+    --el-text-color-placeholder: #{getCssVar('font', 0.3)};
+    --el-disabled-bg-color: #{$fill};
+    --el-fill-color-light: #{$fill};
+    --el-box-shadow: 0 1px 2px -4px #{getCssVar('font', 0.08)}, 0 6px 12px 2px #{getCssVar('font', 0.05)}, 0 12px 24px 4px #{getCssVar('font', 0.02)};
+    --el-box-shadow-light: var(--el-box-shadow);
+    --el-text-color-primary: #{$font};
+    // 自定义值
+    --zrx-input-padding-x: 8px;
+}

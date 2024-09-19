@@ -2,7 +2,7 @@ import axios from 'axios'
 import { apiKeyMap } from '@/config/apiKeyMap'
 import { G } from './global'
 import { isEmpty } from '@/utils'
-import { ElMessage } from 'zrx-admin-plus'
+import { ElMessage } from '@/zrxAdminPlus'
 import { getToken, clearTokenAndToLogin } from '@/utils/cookie'
 
 const cancelToken = axios.CancelToken

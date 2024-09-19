@@ -1,6 +1,6 @@
 import { request } from '@/config/axios'
 import { messageBox } from '@/utils/message'
-import { ElMessage } from 'zrx-admin-plus'
+import { ElMessage } from '@/zrxAdminPlus'
 
 /**
  * @description 列表多选导出数据

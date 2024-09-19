@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>01_Common_Btn/1_Common/common_password_visible</title>
+    <g id="01_Common_Btn/1_Common/common_password_visible" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+        <path d="M12,6.8 C8.7,6.8 5.7,8.9 4.5,12 C6,16.1 10.6,18.2 14.8,16.7 C17,15.9 18.7,14.2 19.5,12 C18.3,8.9 15.3,6.8 12,6.8 Z M12,16.2 C9.2,16.2 6.7,14.5 5.6,12 C7.1,8.5 11.3,6.8 14.8,8.4 C16.4,9.1 17.7,10.4 18.4,12 C17.3,14.5 14.8,16.2 12,16.2 Z M12,9 C10.3,9 9,10.3 9,12 C9,13.7 10.3,15 12,15 C13.7,15 15,13.7 15,12 C15,10.3 13.7,9 12,9 Z M12,14 C10.9,14 10,13.1 10,12 C10,10.9 10.9,10 12,10 C13.1,10 14,10.9 14,12 C14,13.1 13.1,14 12,14 Z" id="Color" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>

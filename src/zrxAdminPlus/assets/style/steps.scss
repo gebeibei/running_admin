@@ -1,0 +1,199 @@
+.el-steps:not(.el-origin) {
+    --zrx-step-font-color: var(--zrx-font);
+    --zrx-step-border-color: var(--zrx-border);
+    --zrx-step-porcess-bg-color: var(--zrx-primary);
+    --zrx-step-circle-diameter: 28px;
+    // 公共部分
+    .el-step {
+        .el-step__main {
+            margin-top: 4px;
+            .el-step__title {
+                color: rgba(var(--zrx-step-font-color), 1);
+                &.is-process {
+                    font-weight: 400;
+                }
+            }
+            .el-step__description {
+                font-size: 14px;
+                color: rgba(var(--zrx-step-font-color), 0.7);
+            }
+        }
+    }
+    &:not(.zrx-sm-step) {
+        .el-step {
+            // 公共部分
+            .el-step__head {
+                .el-step__line {
+                    .el-step__line-inner {
+                        border-bottom: none;
+                        border-top: 1px solid var(--el-color-primary);
+                    }
+                }
+                .el-step__icon {
+                    width: var(--zrx-step-circle-diameter);
+                    height: var(--zrx-step-circle-diameter);
+                    .el-step__icon-inner {
+                        font-weight: 400;
+                    }
+                }
+                &.is-finish {
+                    .el-step__line {
+                        background-color: rgba(var(--zrx-step-porcess-bg-color), 1);
+                    }
+                    .el-step__icon {
+                        &.is-text {
+                            border: none;
+                            @include bgImage('../svg-icon/others/wancheng.svg');
+                            .el-step__icon-inner {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &.is-process {
+                    color: rgba(var(--zrx-white), 1);
+                    border-color: rgba(var(--zrx-step-border-color), 1);
+
+                    .el-step__line {
+                        background-color: rgba(var(--zrx-step-border-color), 1);
+                    }
+                    .el-step__icon {
+                        --el-bg-color: rgba(var(--zrx-step-porcess-bg-color), 1);
+                        border: none;
+                    }
+                }
+                &.is-wait {
+                    color: rgba(var(--zrx-step-font-color), 1);
+                    border-color: rgba(var(--zrx-step-border-color), 1);
+                    .el-step__icon {
+                        &.is-text {
+                            border: 1px solid rgba(var(--zrx-step-border-color), 1);
+                        }
+                    }
+                }
+            }
+
+            &.is-horizontal {
+                .el-step__head {
+                    height: 28px;
+                    .el-step__line {
+                        top: calc(var(--zrx-step-circle-diameter) / 2);
+                        left: calc(50% + var(--zrx-step-circle-diameter) / 2 + 8px);
+                        width: calc(100% - var(--zrx-step-circle-diameter) - 16px);
+                        height: 1px;
+                    }
+                }
+                .el-step__main {
+                    .el-step__title {
+                        line-height: 24px;
+                    }
+                    .el-step__description {
+                        margin-top: 4px;
+                        padding: 0 18%;
+                    }
+                }
+            }
+            &.is-vertical {
+                .el-step__head {
+                    width: 28px;
+                    .el-step__line {
+                        top: calc(var(--zrx-step-circle-diameter) + 4px);
+                        bottom: 4px;
+                        width: 1px;
+                        left: calc(var(--zrx-step-circle-diameter) / 2);
+                    }
+                }
+                .el-step__main {
+                    .el-step__description {
+                        margin-top: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.zrx-sm-step {
+        --zrx-step-circle-diameter: 12px;
+        .el-step {
+            .el-step__head {
+                .el-step__icon {
+                    width: var(--zrx-step-circle-diameter);
+                    height: var(--zrx-step-circle-diameter);
+                }
+                &.is-finish,
+                &.is-process {
+                    border-color: var(--el-color-primary);
+                    .el-step__line {
+                        background-color: rgba(var(--zrx-step-porcess-bg-color), 1);
+                    }
+                    .el-step__icon {
+                        &.is-text {
+                            .el-step__icon-inner {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &.is-process {
+                    .el-step__line {
+                        background-color: rgba(var(--zrx-step-border-color), 1);
+                    }
+                }
+                &.is-wait {
+                    border-color: rgba(49, 60, 76, 0.5);
+                    .el-step__icon {
+                        &.is-text {
+                            .el-step__icon-inner {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .el-step__main {
+                margin-top: 4px;
+                .el-step__title {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+            &.is-horizontal {
+                .el-step__head {
+                    line-height: var(--zrx-step-circle-diameter);
+                    .el-step__line {
+                        // top: 50%;
+                        top: calc(var(--zrx-step-circle-diameter) / 2);
+                        height: 1px;
+                    }
+                }
+                .el-step__main {
+                    .el-step__description {
+                        margin-top: 4px;
+                        padding: 0 8%;
+                    }
+                }
+            }
+            &.is-vertical {
+                .el-step__head {
+                    .el-step__line {
+                        top: var(--zrx-step-circle-diameter);
+                        bottom: 0;
+                        left: calc(var(--zrx-step-circle-diameter) / 2 );
+                        width: 1px;
+                    }
+                    .el-step__icon {
+                        top: -3px;
+                    }
+                }
+                .el-step__main {
+                    margin-top: 0;
+                    .el-step__description {
+                        margin-top: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

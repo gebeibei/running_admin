@@ -1,0 +1,78 @@
+.el-tag:not(.el-origin) {
+    --el-tag-font-size: 14px;
+    --el-tag-border-radius: 2px;
+    padding: 0 var(--zrx-tag-padding-x, 7px);
+    height: var(--zrx-tag-height, 24px);
+
+    &.zrx-tag-white {
+        --el-tag-text-color: #{$font};
+        --el-tag-bg-color: #{$white};
+        --el-tag-border-color: #{$border};
+    }
+
+    &.el-tag--info {
+        --el-tag-text-color: #{$font};
+        --el-tag-bg-color: #{$fill};
+        --el-tag-border-color: #{$border};
+        --zrx-tag-hover-bg-color: #{$secondary};
+    }
+
+    &.el-tag--primary:not(.zrx-tag-white) {
+        --el-tag-text-color: #{$primary};
+        --el-tag-bg-color: #{getCssVar('primary-bg')};
+        --el-tag-border-color: #{getCssVar('primary-border')};
+    }
+
+    &.el-tag--success {
+        --el-tag-text-color: #{$success};
+        --el-tag-bg-color: #{getCssVar('success-bg')};
+        --el-tag-border-color: #{getCssVar('success-border')};
+    }
+
+    &.el-tag--warning {
+        --el-tag-text-color: #{$warning};
+        --el-tag-bg-color: #{getCssVar('warning-bg')};
+        --el-tag-border-color: #{getCssVar('warning-border')};
+    }
+
+    &.el-tag--danger {
+        --el-tag-text-color: #{$danger};
+        --el-tag-bg-color: #{getCssVar('danger-bg')};
+        --el-tag-border-color: #{getCssVar('danger-border')};
+    }
+
+    &.el-tag--large {
+        --zrx-tag-height: 32px;
+    }
+
+    &.zrx-tag-middle {
+        --zrx-tag-height: 28px;
+    }
+
+    &.is-closable {
+        padding-right: 2px;
+
+        &:has(.el-icon.el-tag__close:hover) {
+            background-color: var(--zrx-tag-hover-bg-color, var(--el-tag-bg-color));
+        }
+
+        .el-icon.el-tag__close {
+            --el-icon-size: 24px;
+            margin-left: 2px;
+            border-radius: 0;
+            mask-position: center center;
+            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
+            background-color: $black;
+            mask-image: url('../svg-icon/auto-import/close.svg');
+
+            svg {
+                display: none;
+            }
+
+            &:hover {
+                background-color: var(--zrx-tag-hover-icon-bg-color, #4263fe);
+            }
+        }
+    }
+}

@@ -1,0 +1,150 @@
+.el-popper.is-pure.is-light.el-picker__popper {
+    .el-time-panel {
+        width: 220px;
+        height: 274px;
+
+        .el-time-panel__content {
+            height: calc(100% - 40px);
+
+            &::before {
+                border-top: 0;
+                border-bottom: 0;
+            }
+
+            .el-time-spinner {
+                height: 100%;
+                padding: 0 3px;
+
+                .el-time-spinner__wrapper {
+                    max-height: 100%;
+
+                    &:last-child .el-scrollbar__wrap .el-scrollbar__view.el-time-spinner__list {
+                        border-right: 0;
+                    }
+
+                    .el-scrollbar__wrap {
+                        .el-scrollbar__view.el-time-spinner__list {
+                            border-right: solid 1px $border;
+
+                            &::before,
+                            &::after {
+                                height: 101px;
+                            }
+
+                            .el-time-spinner__item {
+                                font-size: 14px;
+
+                                &.is-active {
+                                    background-color: $primaryBg;
+                                    font-weight: normal;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .el-time-range-picker.el-picker-panel {
+        // width: 220px;
+        height: 274px;
+
+        .el-time-range-picker__content {
+            height: calc(100% - 40px);
+            padding: 0;
+            display: flex;
+
+            &::before {
+                border-top: 0;
+                border-bottom: 0;
+            }
+
+            .el-time-range-picker__cell {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .el-time-range-picker__body.el-time-panel__content {
+                    &::before, &::after {
+                        border-top: 0;
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+            .el-time-spinner {
+                height: 100%;
+                padding: 0 3px;
+
+                .el-time-spinner__wrapper {
+                    max-height: 100%;
+
+                    &:last-child .el-scrollbar__wrap .el-scrollbar__view.el-time-spinner__list {
+                        border-right: 0;
+                    }
+
+                    .el-scrollbar__wrap {
+                        .el-scrollbar__view.el-time-spinner__list {
+                            border-right: solid 1px $border;
+
+                            &::before,
+                            &::after {
+                                height: 78px;
+                            }
+
+                            .el-time-spinner__item {
+                                font-size: 14px;
+
+                                &.is-active {
+                                    background-color: $primaryBg;
+                                    font-weight: normal;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .el-time-panel__footer {
+        padding: 0 4px;
+        height: 40px;
+        line-height: 40px;
+
+        .el-time-panel__btn {
+            --zrx-btn-min-width: 44px;
+            &.confirm {
+                width: 44px;
+                line-height: 32px;
+                color: $white;
+                background-color: $primary;
+                margin-right: 0;
+                font-weight: normal;
+                font-size: 14px;
+                border-radius: 2px;
+
+                &:hover:not(.is-disabled) {
+                    border-color: $primaryHover;
+                    background-color: $primaryHover;
+                }
+
+                &:focus:not(.is-disabled),
+                &:active:not(.is-disabled) {
+                    border-color: $primarySel;
+                    background-color: $primarySel;
+                }
+
+                &.is-disabled {
+                    background-color: $fill;
+                    color: getCssVar('font', 0.3);
+                }
+            }
+
+            &.cancel {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>隐藏文字 2</title>
+    <g id="管理端517/523/61版" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="014-应用管理-PC应用-查看详情" transform="translate(-1076.000000, -150.000000)">
+            <g id="视图" transform="translate(1076.000000, 150.000000)">
+                <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+                <g id="编组" transform="translate(4.500000, 8.500000)">
+                    <path d="M1,0.5 C1,2.68073093 4.2469767,5 7.5,5 C10.7530233,5 14,2.68073093 14,0.5 L15,0.5 C15,3.31926907 11.2469767,6 7.5,6 C3.7530233,6 0,3.31926907 0,0.5 Z" id="形状结合" fill="#3B4155" fill-rule="nonzero"></path>
+                    <line x1="2" y1="3.5" x2="0" y2="5.5" id="路径-2" stroke="#3B4155" stroke-linecap="round"></line>
+                    <line x1="4.5" y1="5" x2="3" y2="7.5" id="路径-3" stroke="#3B4155" stroke-linecap="round"></line>
+                    <line x1="15" y1="3.5" x2="13" y2="5.5" id="路径-2" stroke="#3B4155" stroke-linecap="round" transform="translate(14.000000, 4.500000) scale(-1, 1) translate(-14.000000, -4.500000) "></line>
+                    <line x1="12" y1="5" x2="10.5" y2="7.5" id="路径-3" stroke="#3B4155" stroke-linecap="round" transform="translate(11.250000, 6.250000) scale(-1, 1) translate(-11.250000, -6.250000) "></line>
+                    <line x1="7.5" y1="5.5" x2="7.5" y2="8.5" id="路径-43" stroke="#3B4155" stroke-linecap="round"></line>
+                    <circle id="椭圆形" fill="#3B4155" cx="0.5" cy="0.5" r="1"></circle>
+                    <circle id="椭圆形" fill="#3B4155" cx="14.5" cy="0.5" r="1"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,159 @@
+.el-tabs:not(.el-origin) {
+    --zrx-tabs-content-padding: 16px;
+    --zrx-tabs-scroll-padding-x: 24px;
+    --zrx-tabs-item-width: 106px;
+
+    @mixin borderCss() {
+        border-top: solid 1px $border;
+        border-left: solid 1px $border;
+        border-bottom: solid 1px $border;
+    }
+
+    &.el-tabs--top {
+        .el-tabs__header {
+            margin-bottom: 0;
+
+            .el-tabs__nav-wrap {
+                &::after {
+                    height: 1px;
+                }
+
+                &.is-scrollable {
+                    padding: 0 var(--zrx-tabs-scroll-padding-x);
+
+                    &::after {
+                        left: var(--zrx-tabs-scroll-padding-x);
+                        width: calc(100% - 2 * var(--zrx-tabs-scroll-padding-x));
+                    }
+                }
+
+                .el-tabs__nav-prev {
+                    font-size: 24px;
+                    height: var(--el-tabs-header-height);
+                    @include flex-center;
+
+                    &.is-disabled {
+                        cursor: not-allowed;
+
+                        i {
+                            --zrx-icon-bg: #{getCssVar('font', 0.3)};
+                        }
+                    }
+
+                    i {
+                        @include svgIcon('../svg-icon/auto-import/left-angle.svg');
+                    }
+                }
+
+                .el-tabs__nav-next {
+                    font-size: 24px;
+                    height: var(--el-tabs-header-height);
+                    @include flex-center;
+
+                    &.is-disabled {
+                        cursor: not-allowed;
+
+                        i {
+                            --zrx-icon-bg: #{getCssVar('font', 0.3)};
+                        }
+                    }
+
+                    i {
+                        @include svgIcon('../svg-icon/auto-import/right-angle.svg');
+                    }
+                }
+
+                .el-tabs__nav {
+                    .el-tabs__item {
+                        padding: 0;
+                        font-weight: 400;
+                        width: var(--zrx-tabs-item-width);
+
+                        &:not(.is-active):hover {
+                            color: $font;
+                        }
+
+                        &.is-disabled,
+                        &.is-disabled:hover {
+                            color: getCssVar('font', 0.3);
+                        }
+
+                        &.is-active {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+
+        .el-tabs__content {
+            .el-tab-pane {
+                padding: var(--zrx-tabs-content-padding);
+            }
+        }
+    }
+
+    &.el-tabs--border-card {
+        --el-fill-color-light: #{$white};
+        border-top: 0;
+
+        .el-tabs__nav {
+            border-top: solid 1px $border;
+        }
+
+        > .el-tabs__header .el-tabs__item {
+            &.is-active {
+                border-top: solid 1px $border;
+            }
+
+            &:not(.is-active) {
+                color: $font;
+                border-right-color: $border;
+
+                &:not(.is-disabled):hover {
+                    background-color: $fill;
+                    @include borderCss;
+
+                    i.svg-icon {
+                        background-color: $font;
+                    }
+                }
+
+                &.is-disabled {
+                    color: getCssVar('font', 0.3);
+                    background-color: $fill;
+                    @include borderCss;
+                }
+
+                // &:not(.is-disabled) {
+                //     &.is-focus {
+                //         background-color: $secondary;
+                //         border-left: solid 1px $border;
+                //         border-bottom: solid 1px $border;
+                //     }
+                // }
+            }
+
+            &.is-closable {
+                padding-right: 32px !important;
+                padding-left: 16px !important;
+                position: relative;
+
+                i {
+                    font-size: 24px;
+                    position: absolute;
+                    right: 4px;
+                    @include svgIcon('../svg-icon/auto-import/close.svg');
+
+                    svg {
+                        display: none;
+                    }
+
+                    &:hover {
+                        background-color: $font;
+                    }
+                }
+            }
+        }
+    }
+}

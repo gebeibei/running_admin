@@ -1,0 +1,82 @@
+.el-checkbox:not(.el-origin) {
+    --el-checkbox-input-border-color-hover: #{getCssVar('primary-hover')};
+
+    .el-checkbox__input {
+        width: var(--zrx-checkbox-input-size, 24px);
+        height: var(--zrx-checkbox-input-size, 24px);
+        @include flex-center;
+
+        .el-checkbox__inner {
+            &::after {
+                border: none;
+            }
+
+            &:hover {
+                --el-checkbox-input-bg-color: #{getCssVar('primary-bg')};
+            }
+        }
+
+        // 半选
+        &:not(.is-checked).is-indeterminate {
+            .el-checkbox__inner {
+                --el-checkbox-checked-bg-color: #{$white};
+                --el-checkbox-checked-input-border-color: #{$border};
+
+                &::before {
+                    --zrx-checked-inner-size: 6px;
+                    width: var(--zrx-checked-inner-size);
+                    height: var(--zrx-checked-inner-size);
+                    background-color: $primary;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                    left: 50%;
+                }
+
+                &:hover {
+                    --el-checkbox-checked-bg-color: #{getCssVar('primary-bg')};
+                    --el-checkbox-checked-input-border-color: #{getCssVar('primary-hover')};
+                }
+            }
+        }
+    }
+
+    .el-checkbox__label {
+        padding-left: 4px;
+    }
+
+    &.is-checked {
+        .el-checkbox__inner {
+            &::after {
+                --zrx-icon-width: 10px;
+                --zrx-icon-height: 7px;
+                --zrx-icon-bg: #{getCssVar('font', 0.3)};
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                @include svgIcon('../svg-icon/others/checkbox-checked.svg');
+            }
+        }
+    }
+
+    &.is-checked:not(.is-disabled) {
+        --el-checkbox-input-bg-color: #{$white};
+
+        .el-checkbox__label {
+            color: $font;
+        }
+
+        .el-checkbox__inner {
+            border-color: $border;
+            background: var(--el-checkbox-input-bg-color);
+            @include flex-center;
+
+            &:hover {
+                border-color: var(--el-checkbox-input-border-color-hover);
+            }
+
+            &::after {
+                --zrx-icon-bg: #{$primary};
+            }
+        }
+    }
+}

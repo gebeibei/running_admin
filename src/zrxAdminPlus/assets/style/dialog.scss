@@ -1,0 +1,64 @@
+.el-dialog:not(.el-origin) {
+    --el-dialog-title-font-size: 14px;
+    --el-dialog-font-line-height: 20px;
+    --el-dialog-padding-primary: 0;
+    --zrx-dialog-content-max-height: 70vh;
+    --zrx-dialog-footer-height: 56px;
+    .el-dialog__header {
+        position: relative;
+        padding: 10px 36px 10px 16px;
+        box-sizing: border-box;
+        .el-dialog__title {
+            font-weight: 700;
+        }
+        .el-dialog__headerbtn {
+            top: 50%;
+            right: 6px;
+            width: 24px;
+            height: 24px;
+            transform: translate(0, -50%);
+            .el-dialog__close {
+                width: 24px;
+                height: 24px;
+                background-color: rgba(var(--zrx-font), 1);
+                mask-image: url('../svg-icon/auto-import/close-large.svg');
+                mask-size: 100% 100%;
+                mask-repeat: no-repeat;
+                mask-position: center center;
+                &:hover {
+                    background-color: rgba(var(--zrx-primary), 1);
+                }
+
+                svg {
+                    display: none;
+                }
+            }
+        }
+        .title {
+            font-family: MicrosoftYaHei-Bold;
+            font-size: 14px;
+            color: rgba(var(--zrx-font, 1));
+            letter-spacing: 0;
+            line-height: 20px;
+            font-weight: 700;
+        }
+    }
+    .el-dialog__body {
+        padding: 16px 4px 16px 16px;
+        height: var(--zrx-dialog-content-height, auto);
+        max-height: var(--zrx-dialog-content-max-height);
+        border-top: 1px solid #dcdfe8;
+        border-bottom: 1px solid #dcdfe8;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .el-dialog__footer {
+        height: var(--zrx-dialog-footer-height);
+        padding: 0 16px;
+        background-color: rgba(var(--zrx-background), 1);
+        .dialog-footer {
+            line-height: var(--zrx-dialog-footer-height);
+            text-align: right;
+        }
+    }
+}

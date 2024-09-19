@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>img/default_img_alert_alarm_l</title>
+    <g id="img/default_img_alert_alarm_l" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="default/img_alert_alarm" transform="translate(-1.000000, -1.000000)">
+            <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="58" height="58"></rect>
+            <path d="M9.5013808,46 L48.4986192,46 C49.6031887,46 50.4986192,45.1045695 50.4986192,44 C50.4986192,43.6426545 50.4028772,43.2918352 50.221351,42.98403 L30.7227318,9.92115393 C30.161627,8.96971543 28.9354685,8.65328741 27.98403,9.21439217 C27.6924228,9.38636562 27.4492416,9.62954678 27.2772682,9.92115393 L7.778649,42.98403 C7.21754424,43.9354685 7.53397226,45.161627 8.48541076,45.7227318 C8.79321598,45.904258 9.14403532,46 9.5013808,46 Z" id="Path-2" fill="#3B4155" fill-rule="nonzero" opacity="0.078515625"></path>
+            <path d="M31,35 L31,39 L27,39 L27,35 L31,35 Z M31,20 L31,33 L27,33 L27,20 L31,20 Z" id="Combined-Shape" fill="#3B4155" opacity="0.237053571"></path>
+        </g>
+    </g>
+</svg>

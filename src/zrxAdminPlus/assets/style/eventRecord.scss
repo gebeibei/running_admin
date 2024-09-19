@@ -1,0 +1,158 @@
+.zrx-event-record {
+    --zrx-event-record-width: 300px;
+    --zrx-event-record-row-height: 32px;
+    --zrx-event-record-row-gap: 12px;
+    @include flex-column();
+    row-gap: var(--zrx-event-record-row-gap);
+    width: var(--zrx-event-record-width);
+    max-height: var(--zrx-event-record-max-height, 100%);
+    &.clickable {
+        .event-record-header {
+            cursor: pointer;
+            &:hover {
+                background-color: $fill;
+            }
+            &.active {
+                background-color: $primaryBg;
+            }
+        }
+    }
+    &.composite {
+        .event-record-header-title {
+            @include boldFont();
+        }
+    }
+    &.droppable {
+        .event-record-header {
+            cursor: pointer;
+        }
+    }
+    .event-record-headline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .event-record-headline-text {
+            line-height: 24px;
+            font-size: 16px;
+            color: getCssVar('font', 0.9);
+            @include boldFont();
+            @include ellipsis();
+        }
+        .zrx-icon-wrap {
+            flex: 0 0 auto;
+            line-height: 0;
+        }
+    }
+    .event-record-header-date {
+        color: $fontLight;
+    }
+    .event-record-headline {
+        flex: 0 0 auto;
+    }
+    .zrx-empty-state {
+        height: 100%;
+    }
+    .event-record-entity {
+        flex: 1 1 auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .event-record-panel {
+            position: relative;
+            padding: 0 0 12px 22px;
+            &:not(.disabled).current {
+                .event-record-header-title {
+                    @include boldFont();
+                }
+                .event-record-dot-icon {
+                    transform: scale(1.57);
+                }
+            }
+            &.disabled {
+                .event-record-dot-locate {
+                    .event-record-dot-icon {
+                        background-color: $gray;
+                    }
+                }
+                .event-record-header-title {
+                    color: $fontLight;
+                }
+            }
+            .event-record-header {
+                display: flex;
+                align-items: center;
+                height: var(--zrx-event-record-row-height);
+                margin-left: -22px;
+                padding: 0 4px 0 22px;
+                border-radius: 2px;
+                line-height: 24px;
+                column-gap: 12px;
+                user-select: none;
+                transition: all 0.2s;
+                .event-record-header-title {
+                    @include ellipsis();
+                    transition: all 0.2s;
+                }
+                > :not(.event-record-header-title) {
+                    flex: 0 0 auto;
+                }
+                .zrx-icon-wrap {
+                    margin-left: auto;
+                    margin-right: -4px;
+                    border-radius: 2px;
+                    line-height: 0;
+                    transition: background-color 0.2s;
+                    &:hover {
+                        background-color: $fill;
+                        .zrx-icon-draw-hook {
+                            opacity: 1;
+                        }
+                    }
+                    .zrx-icon-draw-hook {
+                        opacity: 0.7;
+                        transition: opacity 0.2s;
+                    }
+                }
+            }
+            &::before,
+            .event-record-dot-locate {
+                content: "";
+                position: absolute;
+            }
+            .event-record-dot-locate {
+                top: calc(var(--zrx-event-record-row-height) / 2);
+                left: 9px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 0;
+                height: 0;
+                line-height: 0;
+                z-index: 2;
+                > * {
+                    flex: 0 0 auto;
+                }
+                .event-record-dot-icon {
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: $primary;
+                    transition: all 0.2s;
+                }
+            }
+            &::before {
+                top: calc(var(--zrx-event-record-row-height) / 2 + 7px);
+                bottom: calc(7px - var(--zrx-event-record-row-height) / 2);
+                left: 9px;
+                border-right: 1px solid $border;
+                z-index: 1;
+                transform: translateX(-50%);
+            }
+            &:last-child {
+                padding-bottom: 0;
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+}

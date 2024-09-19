@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>01_Common_Btn/1_Common/common_clock</title>
+    <g id="01_Common_Btn/1_Common/common_clock" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+        <path d="M11.5,4 C15.641875,4 19,7.358125 19,11.5 C19,15.641875 15.641875,19 11.5,19 C7.358125,19 4,15.641875 4,11.5 C4,7.358125 7.358125,4 11.5,4 Z M11.5,18 C15.0842857,18 18,15.0842857 18,11.5 C18,7.91571429 15.0842857,5 11.5,5 C7.91571429,5 5,7.91571429 5,11.5 C5,15.0842857 7.91571429,18 11.5,18 Z M14.5,11 C14.775,11 15,11.225 15,11.5 C15,11.775 14.775,12 14.5,12 L11.5,12 C11.225,12 11,11.775 11,11.5 L11,7.5 C11,7.225 11.225,7 11.5,7 C11.775,7 12,7.225 12,7.5 L12,11 L14.5,11 Z" id="Color" fill="#000000" fill-rule="nonzero"></path>
+        <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+    </g>
+</svg>

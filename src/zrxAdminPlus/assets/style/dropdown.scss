@@ -1,0 +1,38 @@
+.el-popper.is-pure.is-light.el-dropdown__popper {
+    $popperItemHeight: var(--zrx-popper-item-height, 32px);
+    --el-dropdown-menuItem-hover-color: #{$font};
+
+    .el-scrollbar {
+        .el-scrollbar__wrap {
+            .el-scrollbar__view.el-dropdown__list {
+                padding: 4px;
+
+                .el-dropdown-menu {
+                    padding: 0;
+
+                    .el-dropdown-menu__item {
+                        min-width: 96px;
+                        padding: 0 4px;
+                        height: $popperItemHeight;
+                        line-height: $popperItemHeight;
+                        border-radius: var(--el-border-radius-base);
+
+                        &:focus:not(.is-disabled) {
+                            font-weight: normal;
+                            background-color: getCssVar('primary-bg');
+                        }
+
+                        &:hover:not(.is-disabled) {
+                            color: $font;
+                            background-color: $fill;
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

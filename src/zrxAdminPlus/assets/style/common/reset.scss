@@ -1,0 +1,209 @@
+html,
+body,
+input,
+button,
+textarea {
+    font-size: 14px;
+    font-family: 'Microsoft YaHei', '微软雅黑', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+    color: $font;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+span,
+a,
+ul,
+li,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+lengend,
+button,
+input,
+select,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+li,
+ul,
+ol,
+span,
+i,
+textarea,
+input,
+a,
+button,
+em,
+table,
+form,
+label {
+    box-sizing: border-box;
+}
+*:focus,
+a:focus {
+    outline: none;
+}
+a,
+a:focus,
+a:hover,
+a:active {
+    color: $font;
+    text-decoration: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+a {
+    transition: none;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var,
+i {
+    font-weight: normal;
+    font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+    font-weight: normal;
+    line-height: 1;
+    color: unset;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+b,
+i,
+em {
+    font-weight: normal;
+    font-style: normal;
+}
+ul,
+ol {
+    list-style: none;
+}
+fieldset,
+img {
+    border: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+textarea {
+    border-width: 0;
+    font-size: 1em;
+    resize: none !important;
+}
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='text'],
+input[type='number'] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+// 占位符字体
+input,
+textarea,
+input.el-input__inner,
+textarea.el-textarea__inner,
+.el-input.is-disabled .el-input__inner,
+.el-textarea.is-disabled .el-textarea__inner {
+    &::placeholder {
+        font-family: 'Microsoft YaHei';
+        color: getCssVar('font', 0.3);
+    }
+}
+
+// 滚动条样式
+html,
+div {
+    &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        &:hover {
+            background-color: getCssVar('font', 0.04);
+        }
+    }
+    // 滚动条滑块
+    &::-webkit-scrollbar-thumb {
+        border: 4px solid transparent;
+        border-radius: 100px;
+        background-color: getCssVar('font', 0.2);
+        background-clip: padding-box;
+        &:hover {
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        &:active {
+            background-color: getCssVar('font', 0.4);
+        }
+    }
+}
+
+// element
+.el-popper {
+    :not([role='tooltip']) {
+        &[data-popper-placement^='bottom'] {
+            margin-top: -8px !important;
+        }
+
+        &[data-popper-placement^='top'] {
+            margin-bottom: -8px !important;
+        }
+    }
+    &.el-select__popper,
+    &.el-picker__popper,
+    &.el-cascader__dropdown,
+    &.el-dropdown__popper {
+        .el-popper__arrow {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>daoru</title>
+    <g id="shangchaun" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="导入" transform="translate(-316.000000, -196.000000)">
+            <g id="Data-Entry/Button/IconButton/32/Normal备份-3" transform="translate(312.000000, 192.000000)">
+                <g id="daoru" transform="translate(4.000000, 4.000000)">
+                    <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M11,11 L19,11 L19,12 L11,12 L11,14.5 L8,11.5 L11,8.5 L11,11 Z M18,9 L18,5 L6,5 L6,18 L18,18 L18,14 L19,14 L19,18.5 C19,18.7761424 18.7761424,19 18.5,19 L5.5,19 C5.22385763,19 5,18.7761424 5,18.5 L5,4.5 C5,4.22385763 5.22385763,4 5.5,4 L18.5,4 C18.7761424,4 19,4.22385763 19,4.5 L19,9 L18,9 Z" id="Color" fill="#3B4155" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

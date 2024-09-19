@@ -1,0 +1,12 @@
+.el-popper.zrx-tooltip:not(.el-origin) {
+    &[role="tooltip"] {
+        --zrx-tooltip-font-size: 14px;
+        --zrx-tooltip-padding: 5px 8px;
+        --el-border-color-light: transparent;
+        --el-bg-color-overlay: rgba(var(--zrx-fill), 1);
+        filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+        font-size: var(--zrx-tooltip-font-size);
+        color: rgba(var(--zrx-font), 1);
+        padding: var(--zrx-tooltip-padding);
+    }
+}

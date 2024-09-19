@@ -1,0 +1,135 @@
+.el-button:not(.el-origin) {
+    $types: 'primary', 'success', 'error', 'warning', 'danger';
+    --el-border-radius-base: 2px;
+    --el-button-text-weight: 400;
+    min-width: var(--zrx-btn-min-width, 80px);
+    width: fit-content;
+    padding: 0 var(--zrx-btn-padding-x, 7px);
+    height: var(--zrx-btn-height, 32px);
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:has(span i),
+    &:has(span .has-icon) {
+        padding-left: calc(var(--zrx-btn-padding-x, 7px) - 4px);
+    }
+
+    > span {
+        padding: 0;
+        font-size: 14px;
+
+        &:has(.svg-icon),
+        &.has-icon {
+            flex: 1 1 auto;
+            // width: 10px;
+        }
+
+        > i {
+            font-size: 24px;
+            margin-right: 4px;
+            flex-shrink: 0;
+        }
+    }
+
+    &.el-button--primary i,
+    &.el-button--error i,
+    &.el-button--danger i {
+        background-color: $white;
+    }
+
+    @each $type in $types {
+        &.el-button--#{$type} {
+            &:hover {
+                --el-button-hover-border-color: #{getCssVar($type + '-hover')};
+                --el-button-hover-bg-color: #{getCssVar($type + '-hover')};
+            }
+
+            &:focus,
+            &:active {
+                --el-button-active-border-color: #{getCssVar($type + '-sel')};
+                --el-button-active-bg-color: #{getCssVar($type + '-sel')};
+            }
+        }
+    }
+
+    // 次要按钮
+    &.el-button--default,
+    &.el-button-secondary {
+        --el-button-text-color: #{$font};
+        --el-button-border-color: #{$border};
+
+        &.zrx-button-ghost {
+            border-width: 0;
+        }
+
+        &:hover {
+            --el-button-hover-text-color: #{$font};
+            --el-button-hover-border-color: #{$border};
+            --el-button-hover-bg-color: #{$fill};
+        }
+
+        &:focus,
+        &:active {
+            --el-button-active-text-color: #{$font};
+            --el-button-active-border-color: #{$border};
+            --el-button-active-bg-color: #{$secondary};
+        }
+    }
+
+    &.is-circle {
+        --zrx-btn-padding-x: 0;
+        min-width: var(--zrx-btn-min-width, 32px);
+        width: var(--zrx-btn-width, 32px);
+        height: var(--zrx-btn-height, 32px);
+
+        > span {
+            justify-content: center;
+        }
+
+        i {
+            margin-right: 0;
+            padding-left: 0;
+        }
+    }
+    &.is-round {
+        --zrx-btn-padding-x: 0;
+        --el-border-radius-round: 2px;
+        min-width: var(--zrx-btn-min-width, 32px);
+        width: var(--zrx-btn-width, 32px);
+        height: var(--zrx-btn-height, 32px);
+
+        > span {
+            justify-content: center;
+        }
+
+        i {
+            margin-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &.is-link {
+        --zrx-btn-min-width: 0;
+
+        &.el-button--primary i {
+            background-color: $primary;
+        }
+
+        &.el-button--error i,
+        &.el-button--danger i {
+            background-color: $danger;
+        }
+    }
+
+    &.is-disabled {
+        --el-button-disabled-text-color: #{getCssVar('font', 0.3)};
+        --el-button-disabled-bg-color: #{$white};
+        --el-button-disabled-border-color: #{$border};
+
+        &.is-link {
+            --el-color-primary-light-5: #{getCssVar('font', 0.3)};
+        }
+    }
+}

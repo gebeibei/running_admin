@@ -1,0 +1,72 @@
+.el-switch:not(.el-origin) {
+    &.el-switch--large {
+        height: 32px;
+        .el-switch__core {
+            min-width: var(--zrx-switch-large-minwidth, 48px);
+            height: var(--zrx-switch-large-height, 24px);
+            .el-switch__action {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &.is-checked {
+            .el-switch__core {
+                .el-switch__action {
+                    left: calc(100% - 22px);
+                }
+            }
+        }
+    }
+    &.el-switch--small {
+        .el-switch__core {
+            min-width: var(--zrx-switch-large-minwidth, 32px);
+            height: var(--zrx-switch-small-height, 16px);
+            .el-switch__action {
+                width: 13px;
+                height: 13px;
+            }
+        }
+        &.is-checked {
+            .el-switch__core {
+                .el-switch__action {
+                    left: calc(100% - 14px);
+                }
+            }
+        }
+    }
+    .el-switch__core {
+        min-width: var(--zrx-switch-minwidth, 40px);
+        height: var(--zrx-switch-height, 20px);
+        border-color: $border;
+        border-radius: 12px;
+        &:hover {
+            border-color: $secondary;
+            background-color: $secondary;
+        }
+    }
+    .el-switch__label {
+        vertical-align: middle;
+    }
+    &.is-checked {
+        .el-switch__core {
+            &:hover {
+                border-color: $primaryHover;
+                background-color: $primaryHover;
+            }
+            .el-switch__action {
+                left: calc(100% - 18px);
+            }
+        }
+    }
+    &.is-disabled {
+        &.is-checked {
+            .el-switch__core {
+                border-color: $primaryBorder;
+                background-color: $primaryBg;
+            }
+        }
+        .el-switch__core {
+            background-color: $fill;
+        }
+    }
+}

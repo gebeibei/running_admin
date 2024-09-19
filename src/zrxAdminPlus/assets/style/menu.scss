@@ -1,0 +1,124 @@
+.el-menu:not(.el-origin) {
+    // --el-menu-border-color: rgba(220, 223, 232, 0);
+    // --el-menu-bg-color: rgba(255, 255, 255, 0);
+    // --zrx-menu-active-bg-color: rgba(66, 99, 254, 0.1);
+    --el-menu-icon-width: 24px;
+    --el-menu-active-color: rgba(var(--zrx-font), 1);
+    --el-menu-base-level-padding: 32px;
+    --el-menu-level-padding: 12px;
+    --el-menu-item-height: 40px;
+    --el-menu-sub-item-height: 40px;
+    --el-menu-hover-bg-color: rgba(var(--zrx-font), 0.04);
+    border-right: none;
+    &.el-menu--vertical {
+        &:not(.el-menu--collapse) {
+            > .el-sub-menu {
+                .svg-icon {
+                    margin-right: 8px;
+                }
+                > .el-sub-menu__title {
+                    padding-left: 4px;
+                    padding-right: calc(4px + var(--el-menu-icon-width));
+                }
+
+                > .el-menu.el-menu--inline > .el-menu-item {
+                    padding-left: calc(4px + var(--el-menu-icon-width) + 8px);
+                }
+
+                > .el-menu.el-menu--inline > .el-sub-menu > .el-sub-menu__title {
+                    padding-left: calc(4px + var(--el-menu-icon-width) + 8px);
+                }
+            }
+            > .el-menu-item {
+                padding-left: 4px;
+                .svg-icon {
+                    margin-right: 8px;
+                }
+            }
+            .el-menu-item {
+                border-radius: 2px;
+                padding-right: 4px;
+
+                &.is-active {
+                    font-weight: 700;
+                    background: var(--zrx-menu-active-bg-color, rgba(var(--zrx-primary-shadow), 0.1));
+                    .svg-icon {
+                        background-color: var(--zrx-menu-active-icon-bg, rgba(var(--zrx-primary), 1));
+                    }
+                }
+            }
+        }
+
+        &.el-menu--collapse {
+            --el-menu-base-level-padding: 4px;
+            width: calc(var(--el-menu-icon-width) + 16px);
+            > .el-sub-menu {
+                .el-sub-menu__title {
+                    @include flex-center();
+                }
+            }
+            > .el-menu-item,
+            > .el-sub-menu {
+                &.is-active {
+                    background: var(--zrx-menu-active-bg-color, rgba(var(--zrx-primary-shadow), 0.1));
+                    .svg-icon {
+                        background-color: var(--zrx-menu-active-icon-bg, rgba(var(--zrx-primary), 1));
+                    }
+                }
+                .el-menu-tooltip__trigger {
+                    @include flex-center();
+                }
+            }
+        }
+
+        .el-icon.el-sub-menu__icon-arrow {
+            font-size: 24px;
+            margin-top: -12px;
+            right: 4px;
+
+            &::before {
+                content: '';
+                @include svgIcon('../svg-icon/auto-import/down-angle.svg');
+            }
+
+            svg {
+                display: none;
+            }
+        }
+    }
+}
+.el-popper:not(.el-origin) {
+    &.is-pure {
+        &:not(.el-select__popper, .el-picker__popper, .el-cascader__dropdown, .el-dropdown__popper) {
+            padding: 3px;
+        }
+    }
+    .el-menu--popup-container {
+        .el-menu {
+            &.el-menu--popup {
+                padding: 0;
+                border-radius: 0;
+                box-shadow: none;
+                min-width: 144px;
+                .el-menu-item {
+                    &.is-active {
+                        background: var(--zrx-menu-active-bg-color, rgba(var(--zrx-primary-shadow), 0.1));
+                    }
+                }
+            }
+            .el-sub-menu {
+                .el-sub-menu__title {
+                    --el-menu-base-level-padding: 8px;
+                }
+                .el-sub-menu__icon-arrow {
+                    --el-menu-base-level-padding: 10px;
+                }
+                > .el-popper {
+                    margin-top: -4px;
+                    margin-left: -4px;
+                    max-width: none;
+                }
+            }
+        }
+    }
+}

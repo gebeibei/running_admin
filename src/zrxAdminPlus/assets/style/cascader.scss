@@ -1,0 +1,85 @@
+.el-cascader:not(.el-origin) {
+    width: 100%;
+
+    &:hover {
+        .el-input__wrapper {
+            box-shadow: none;
+        }
+    }
+
+    .el-input {
+        &.is-focus {
+            .el-input__wrapper {
+                box-shadow: $inputShadow;
+                border-color: $primary;
+            }
+        }
+    }
+}
+
+.el-popper.is-pure.is-light.el-cascader__dropdown {
+    $popperItemHeight: var(--zrx-popper-item-height, 32px);
+    .el-cascader-panel {
+        .el-scrollbar.el-cascader-menu {
+            max-width: 200px;
+
+            .el-cascader-menu__wrap.el-scrollbar__wrap {
+                .el-scrollbar__view.el-cascader-menu__list {
+                    padding: 4px;
+
+                    .el-cascader-node {
+                        padding: 0 0 0 4px;
+                        height: $popperItemHeight;
+                        line-height: $popperItemHeight;
+                        border-radius: var(--el-border-radius-base);
+
+                        .el-checkbox {
+                            margin-right: 4px;
+                        }
+
+                        .el-cascader-node__label {
+                            padding: 0;
+                            padding-right: 32px;
+                        }
+
+                        .el-cascader-node__postfix {
+                            &:not(.arrow-right) {
+                                right: 5px;
+                            }
+
+                            &.arrow-right {
+                                right: 0;
+                                @include svgIcon('../svg-icon/auto-import/right-angle.svg');
+
+                                svg {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        &.in-active-path,
+                        &.is-active {
+                            font-weight: normal;
+                            background-color: getCssVar('primary-bg');
+                        }
+
+                        &.in-active-path:not(.is-disabled),
+                        &.is-active:not(.is-disabled) {
+                            color: $font;
+                        }
+
+                        &.is-active {
+                            .el-icon.el-cascader-node__prefix {
+                                display: none;
+                            }
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

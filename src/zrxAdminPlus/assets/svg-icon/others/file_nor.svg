@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>img/file_nor</title>
+    <g id="img/file_nor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+        <g id="docs" transform="translate(7.000000, 4.000000)">
+            <path d="M11.3105455,0 L1.19971848,0 C0.537132257,0 0,0.546366692 0,1.19016373 L0,22.8098363 C0,23.4671455 0.527999148,24 1.20294923,24 L17.7970508,24 C18.4614213,24 19,23.4581061 19,22.8095416 L19,4.5 L15,0 L11.3105455,0 Z" id="Shape" fill="#405FFE"></path>
+            <polygon id="Shape" fill="#2054B2" points="15 4.5 19 8.5 19 4.5"></polygon>
+            <polygon id="Shape" fill="#CCD4FF" points="15 4.5 19 4.5 15 0"></polygon>
+            <rect id="矩形" fill="#FFFFFF" opacity="0.9" x="4" y="8" width="11" height="1" rx="0.5"></rect>
+            <rect id="矩形备份-5" fill="#FFFFFF" opacity="0.9" x="4" y="11" width="11" height="1" rx="0.5"></rect>
+            <rect id="矩形备份-6" fill="#FFFFFF" opacity="0.9" x="4" y="14" width="11" height="1" rx="0.5"></rect>
+            <rect id="矩形备份-7" fill="#FFFFFF" opacity="0.9" x="4" y="17" width="7" height="1" rx="0.5"></rect>
+        </g>
+    </g>
+</svg>

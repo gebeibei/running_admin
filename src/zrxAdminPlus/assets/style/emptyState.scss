@@ -1,0 +1,23 @@
+.zrx-empty-state {
+    @include flex-center;
+    flex-direction: column;
+    overflow: hidden;
+    &:not(.no-margin) {
+        &::before,
+        &::after {
+            content: '';
+            flex: 1 1 auto;
+            height: var(--zrx-empty-state-margin-y, 24px);
+        }
+    }
+    > i {
+        flex: 0 0 auto;
+    }
+    > span {
+        flex: 0 0 auto;
+        line-height: 21px;
+        @include ellipsis;
+        color: getCssVar('font', 0.3);
+        margin-top: var(--zrx-empty-state-text-mt, 8px);
+    }
+}

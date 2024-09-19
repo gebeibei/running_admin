@@ -1,0 +1,444 @@
+.svg-icon,
+.zrx-icon {
+    display: inline-block;
+    width: var(--zrx-icon-width, 24px);
+    height: var(--zrx-icon-height, 24px);
+    &.svg-icon {
+        // 通过 mask-image 实现
+        mask-position: center center;
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat;
+        background-color: var(--zrx-icon-bg, $font);
+    }
+    &.zrx-icon {
+        // 通过 background-image 实现
+        background-position: left top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &[reverse-x] {
+        transform: rotateY(180deg);
+    }
+    &[reverse-z] {
+        transform: rotateZ(180deg);
+    }
+}
+.svg-icon {
+    // 以下为自动注入内容
+    // svg-icon-start
+    &.zrx-icon-add-small {
+        mask-image: url("../svg-icon/auto-import/add-small.svg");
+    }
+    &.zrx-icon-add {
+        mask-image: url("../svg-icon/auto-import/add.svg");
+    }
+    &.zrx-icon-angle-line-left {
+        mask-image: url("../svg-icon/auto-import/angle-line-left.svg");
+    }
+    &.zrx-icon-angle-line-right {
+        mask-image: url("../svg-icon/auto-import/angle-line-right.svg");
+    }
+    &.zrx-icon-angles-down-large {
+        mask-image: url("../svg-icon/auto-import/angles-down-large.svg");
+    }
+    &.zrx-icon-angles-down {
+        mask-image: url("../svg-icon/auto-import/angles-down.svg");
+    }
+    &.zrx-icon-angles-left-large {
+        mask-image: url("../svg-icon/auto-import/angles-left-large.svg");
+    }
+    &.zrx-icon-angles-left {
+        mask-image: url("../svg-icon/auto-import/angles-left.svg");
+    }
+    &.zrx-icon-angles-right-large {
+        mask-image: url("../svg-icon/auto-import/angles-right-large.svg");
+    }
+    &.zrx-icon-angles-right {
+        mask-image: url("../svg-icon/auto-import/angles-right.svg");
+    }
+    &.zrx-icon-angles-up-large {
+        mask-image: url("../svg-icon/auto-import/angles-up-large.svg");
+    }
+    &.zrx-icon-angles-up {
+        mask-image: url("../svg-icon/auto-import/angles-up.svg");
+    }
+    &.zrx-icon-arrow-left {
+        mask-image: url("../svg-icon/auto-import/arrow-left.svg");
+    }
+    &.zrx-icon-arrow-right {
+        mask-image: url("../svg-icon/auto-import/arrow-right.svg");
+    }
+    &.zrx-icon-assign-person {
+        mask-image: url("../svg-icon/auto-import/assign-person.svg");
+    }
+    &.zrx-icon-assign {
+        mask-image: url("../svg-icon/auto-import/assign.svg");
+    }
+    &.zrx-icon-calendar {
+        mask-image: url("../svg-icon/auto-import/calendar.svg");
+    }
+    &.zrx-icon-clock {
+        mask-image: url("../svg-icon/auto-import/clock.svg");
+    }
+    &.zrx-icon-close-large {
+        mask-image: url("../svg-icon/auto-import/close-large.svg");
+    }
+    &.zrx-icon-close-round {
+        mask-image: url("../svg-icon/auto-import/close-round.svg");
+    }
+    &.zrx-icon-close {
+        mask-image: url("../svg-icon/auto-import/close.svg");
+    }
+    &.zrx-icon-closed-eye {
+        mask-image: url("../svg-icon/auto-import/closed-eye.svg");
+    }
+    &.zrx-icon-copy {
+        mask-image: url("../svg-icon/auto-import/copy.svg");
+    }
+    &.zrx-icon-delete {
+        mask-image: url("../svg-icon/auto-import/delete.svg");
+    }
+    &.zrx-icon-details {
+        mask-image: url("../svg-icon/auto-import/details.svg");
+    }
+    &.zrx-icon-done {
+        mask-image: url("../svg-icon/auto-import/done.svg");
+    }
+    &.zrx-icon-down-angle-large {
+        mask-image: url("../svg-icon/auto-import/down-angle-large.svg");
+    }
+    &.zrx-icon-down-angle {
+        mask-image: url("../svg-icon/auto-import/down-angle.svg");
+    }
+    &.zrx-icon-download {
+        mask-image: url("../svg-icon/auto-import/download.svg");
+    }
+    &.zrx-icon-draw-left {
+        mask-image: url("../svg-icon/auto-import/draw-left.svg");
+    }
+    &.zrx-icon-draw-right {
+        mask-image: url("../svg-icon/auto-import/draw-right.svg");
+    }
+    &.zrx-icon-edit {
+        mask-image: url("../svg-icon/auto-import/edit.svg");
+    }
+    &.zrx-icon-export {
+        mask-image: url("../svg-icon/auto-import/export.svg");
+    }
+    &.zrx-icon-eye {
+        mask-image: url("../svg-icon/auto-import/eye.svg");
+    }
+    &.zrx-icon-filter-table {
+        mask-image: url("../svg-icon/auto-import/filter-table.svg");
+    }
+    &.zrx-icon-filtered {
+        mask-image: url("../svg-icon/auto-import/filtered.svg");
+    }
+    &.zrx-icon-folder {
+        mask-image: url("../svg-icon/auto-import/folder.svg");
+    }
+    &.zrx-icon-forward {
+        mask-image: url("../svg-icon/auto-import/forward.svg");
+    }
+    &.zrx-icon-hide-eye {
+        mask-image: url("../svg-icon/auto-import/hide-eye.svg");
+    }
+    &.zrx-icon-import {
+        mask-image: url("../svg-icon/auto-import/import.svg");
+    }
+    &.zrx-icon-left-angle-large {
+        mask-image: url("../svg-icon/auto-import/left-angle-large.svg");
+    }
+    &.zrx-icon-left-angle {
+        mask-image: url("../svg-icon/auto-import/left-angle.svg");
+    }
+    &.zrx-icon-maximum {
+        mask-image: url("../svg-icon/auto-import/maximum.svg");
+    }
+    &.zrx-icon-minimize {
+        mask-image: url("../svg-icon/auto-import/minimize.svg");
+    }
+    &.zrx-icon-minus-small {
+        mask-image: url("../svg-icon/auto-import/minus-small.svg");
+    }
+    &.zrx-icon-minus {
+        mask-image: url("../svg-icon/auto-import/minus.svg");
+    }
+    &.zrx-icon-paper-clip {
+        mask-image: url("../svg-icon/auto-import/paper-clip.svg");
+    }
+    &.zrx-icon-picture {
+        mask-image: url("../svg-icon/auto-import/picture.svg");
+    }
+    &.zrx-icon-refresh {
+        mask-image: url("../svg-icon/auto-import/refresh.svg");
+    }
+    &.zrx-icon-revocation {
+        mask-image: url("../svg-icon/auto-import/revocation.svg");
+    }
+    &.zrx-icon-right-angle-large {
+        mask-image: url("../svg-icon/auto-import/right-angle-large.svg");
+    }
+    &.zrx-icon-right-angle {
+        mask-image: url("../svg-icon/auto-import/right-angle.svg");
+    }
+    &.zrx-icon-search {
+        mask-image: url("../svg-icon/auto-import/search.svg");
+    }
+    &.zrx-icon-setting {
+        mask-image: url("../svg-icon/auto-import/setting.svg");
+    }
+    &.zrx-icon-show-more-ver {
+        mask-image: url("../svg-icon/auto-import/show-more-ver.svg");
+    }
+    &.zrx-icon-show-more {
+        mask-image: url("../svg-icon/auto-import/show-more.svg");
+    }
+    &.zrx-icon-sort-asc {
+        mask-image: url("../svg-icon/auto-import/sort-asc.svg");
+    }
+    &.zrx-icon-sort-desc {
+        mask-image: url("../svg-icon/auto-import/sort-desc.svg");
+    }
+    &.zrx-icon-switch-ver {
+        mask-image: url("../svg-icon/auto-import/switch-ver.svg");
+    }
+    &.zrx-icon-switch {
+        mask-image: url("../svg-icon/auto-import/switch.svg");
+    }
+    &.zrx-icon-telephone {
+        mask-image: url("../svg-icon/auto-import/telephone.svg");
+    }
+    &.zrx-icon-tool {
+        mask-image: url("../svg-icon/auto-import/tool.svg");
+    }
+    &.zrx-icon-up-angle-large {
+        mask-image: url("../svg-icon/auto-import/up-angle-large.svg");
+    }
+    &.zrx-icon-up-angle {
+        mask-image: url("../svg-icon/auto-import/up-angle.svg");
+    }
+    &.zrx-icon-update {
+        mask-image: url("../svg-icon/auto-import/update.svg");
+    }
+    &.zrx-icon-upload {
+        mask-image: url("../svg-icon/auto-import/upload.svg");
+    }
+    &.zrx-icon-user {
+        mask-image: url("../svg-icon/auto-import/user.svg");
+    }
+    &.zrx-icon-verification {
+        mask-image: url("../svg-icon/auto-import/verification.svg");
+    }
+    &.zrx-icon-withdraw {
+        mask-image: url("../svg-icon/auto-import/withdraw.svg");
+    }
+    &.zrx-icon-zoom-in {
+        mask-image: url("../svg-icon/auto-import/zoom-in.svg");
+    }
+    &.zrx-icon-zoom-out {
+        mask-image: url("../svg-icon/auto-import/zoom-out.svg");
+    }
+    // svg-icon-end
+    // 以下为手动写入内容
+    // 数据空态图 
+    &.zrx-icon-empty-default {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_no_data_l.svg");
+    }
+    &.zrx-icon-empty-person {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_addperson_l.svg");
+    }
+    &.zrx-icon-image-failure {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_picture_error_l.svg");
+    }
+    &.zrx-icon-empty-search {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_no_result_l.svg");
+    }
+    &.zrx-icon-empty-notify {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_error_l.svg");
+    }
+    &.zrx-icon-empty-warning {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_img_alert_alarm_l.svg");
+    }
+    &.zrx-icon-empty-map {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_map_default_l.svg");
+    }
+    &.zrx-icon-map-offline {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_map_offline_l.svg");
+    }
+    &.zrx-icon-empty-map-empty {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_no_data_map_l.svg");
+    }
+    &.zrx-icon-empty-video {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_video_disable_l.svg");
+    }
+    &.zrx-icon-video-offline {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/default_video_offline_l.svg");
+    }
+    &.zrx-icon-upload-file {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/icon_upload_file.svg");
+    }
+    &.zrx-icon-upload-image {
+        width: var(--zrx-empty-state-width, 56px);
+        height: var(--zrx-empty-state-height, 56px);
+        mask-image: url("../svg-icon/others/icon_upload_image.svg");
+    }
+}
+
+// 多色图标
+.zrx-icon {
+    // zrx-icon-start
+    &.zrx-icon-info-gray {
+        background-image: url('../svg-icon/others/info_sm.svg');
+    }
+    &.zrx-icon-error {
+        background-image: url('../svg-icon/others/feedback_error_sm.svg');
+    }
+    &.zrx-icon-error-large {
+        width: var(--zrx-icon-width-large, 40px);
+        height: var(--zrx-icon-height-large, 40px);
+        background-image: url('../svg-icon/others/feedback_error_lg.svg');
+    }
+    &.zrx-icon-error-empty {
+        width: var(--zrx-icon-width-large, 40px);
+        height: var(--zrx-icon-height-large, 40px);
+        background-image: url('../svg-icon/others/feedback_error.svg');
+    }
+    &.zrx-icon-info {
+        background-image: url('../svg-icon/others/feedback_info_sm.svg');
+    }
+    &.zrx-icon-info-large {
+        width: var(--zrx-icon-width-large, 40px);
+        height: var(--zrx-icon-height-large, 40px);
+        background-image: url('../svg-icon/others/feedback_info_lg.svg');
+    }
+    &.zrx-icon-info-empty {
+        width: var(--zrx-icon-width-large, 40px);
+        height: var(--zrx-icon-height-large, 40px);
+        background-image: url('../svg-icon/others/feedback_info.svg');
+    }
+    &.zrx-icon-success {
+        background-image: url('../svg-icon/others/feedback_success_sm.svg');
+    }
+    &.zrx-icon-success-large {
+        width: var(--zrx-icon-width-large, 40px);
+        height: var(--zrx-icon-height-large, 40px);
+        background-image: url('../svg-icon/others/feedback_success_lg.svg');
+    }
+    &.zrx-icon-success-empty {
+        width: var(--zrx-icon-width-large, 40px);
+        height: var(--zrx-icon-height-large, 40px);
+        background-image: url('../svg-icon/others/feedback_success.svg');
+    }
+    &.zrx-icon-question {
+        background-image: url('../svg-icon/others/question_sm.svg');
+    }
+    &.zrx-icon-question-large {
+        width: var(--zrx-icon-width-large, 40px);
+        height: var(--zrx-icon-height-large, 40px);
+        background-image: url('../svg-icon/others/feedback_question_lg.svg');
+    }
+    &.zrx-icon-warning {
+        background-image: url('../svg-icon/others/feedback_warning_sm.svg');
+    }
+    &.zrx-icon-warning-large {
+        width: var(--zrx-icon-width-large, 40px);
+        height: var(--zrx-icon-height-large, 40px);
+        background-image: url('../svg-icon/others/feedback_warning_lg.svg');
+    }
+    &.zrx-icon-warning-empty {
+        width: var(--zrx-icon-width-large, 40px);
+        height: var(--zrx-icon-height-large, 40px);
+        background-image: url('../svg-icon/others/feedback_warning.svg');
+    }
+    &.zrx-icon-file-normal {
+        width: var(--zrx-icon-width-big, 32px);
+        height: var(--zrx-icon-height-big, 32px);
+        background-image: url('../svg-icon/others/file_nor.svg');
+    }
+    &.zrx-icon-file-warning {
+        width: var(--zrx-icon-width-big, 32px);
+        height: var(--zrx-icon-height-big, 32px);
+        background-image: url('../svg-icon/others/file_wrong.svg');
+    }
+    // zrx-icon-end
+}
+
+// 特殊按钮
+.zrx-icon-draw-hook {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+    font-size: 0;
+    transform: scale(0.875);
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+    }
+    i {
+        position: relative;
+        width: 12px;
+        height: 6px;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            width: 8px;
+            height: 1px;
+            transition: all 0.2s ease-out;
+            background-color: $font;
+        }
+        &:before {
+            left: -1px;
+            transform: rotate(40deg);
+        }
+        &:after {
+            right: -1px;
+            transform: rotate(-40deg);
+        }
+    }
+    &.is-reversed{
+        i {
+            &:before {
+                transform: rotate(-40deg);
+            }
+            &:after {
+                transform: rotate(40deg);
+            }
+        }
+    }
+}

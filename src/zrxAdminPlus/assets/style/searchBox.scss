@@ -1,0 +1,100 @@
+.zrx-search-box {
+    display: grid;
+    justify-items: stretch;
+    grid-row-gap: var(--zrx-search-gap-row);
+    grid-column-gap: var(--zrx-search-gap-col);
+    grid-auto-columns: minmax(0, 1fr);
+    position: relative;
+    width: 100%;
+    height: var(--zrx-search-row-height);
+    padding: 0 var(--zrx-search-padding-x);
+    &:not(.simplified) {
+        overflow: hidden;
+    }
+    &:after {
+        content: '';
+        height: var(--zrx-search-row-height);
+    }
+    &.col-2 {
+        grid-template-columns: minmax(0, 1fr);
+        .secondary-btns,
+        &:after {
+            grid-column: 2 / span 1;
+        }
+    }
+    &.col-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        .secondary-btns,
+        &:after {
+            grid-column: 3 / span 1;
+        }
+    }
+    &.col-4 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        .secondary-btns,
+        &:after {
+            grid-column: 4 / span 1;
+        }
+    }
+    .secondary-btns {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $white;
+        z-index: 2;
+
+        > * {
+            margin-left: 10px;
+            height: 24px;
+            height: var(--zrx-search-row-height);
+            @include flex-center;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &.auto-height {
+        height: auto;
+    }
+    &.trans-start {
+        transition: height 0.2s ease-out;
+    }
+    &.heighted {
+        height: var(--zrx-search-total-height);
+    }
+}
+
+.zrx-search-item {
+    display: flex;
+    height: var(--zrx-search-row-height);
+    > .label {
+        flex: 0 0 auto;
+        width: var(--zrx-search-label-width);
+        border: 1px solid $border;
+        border-right: none;
+        border-radius: 2px 0 0 2px;
+        color: $fontLight;
+        user-select: none;
+        white-space: nowrap;
+        background-color: $background;
+        @include flex-center;
+        + * {
+            width: calc(100% - var(--zrx-search-label-width));
+            &.el-input .el-input__inner,
+            &.el-select .el-input__inner,
+            &.zrx-time-picker,
+            &.zrx-date-time-picker,
+            &.zrx-drop-tree,
+            &.zrx-multiple-select {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+}

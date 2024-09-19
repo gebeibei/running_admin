@@ -1,0 +1,28 @@
+.el-slider:not(.el-origin) {
+    --el-slider-border-radius: 2px;
+    --el-slider-height: 4px;
+    --el-slider-button-size: 16px;
+    --el-slider-button-wrapper-size: 16px;
+    --el-slider-button-wrapper-offset: -9px;
+
+    .el-slider__runway {
+
+        &:not(.is-disabled) {
+            .el-slider__button-wrapper {
+                .el-slider__button {
+                    border-color: $border;
+
+                    &.hover {
+                        transform: scale(1);
+                        border-color: var(--el-slider-main-bg-color);
+                    }
+                }
+            }
+        }
+    }
+    &.el-slider--with-input {
+        .el-slider__runway {
+            margin-right: 20px;
+        }
+    }
+}

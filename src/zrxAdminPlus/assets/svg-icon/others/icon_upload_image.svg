@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>09_Common_Default/default_picture_empty_l</title>
+    <g id="09_Common_Default/default_picture_empty_l" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" opacity="0" x="0.5" y="0.5" width="79" height="79"></rect>
+        <g id="default/picture_empty" transform="translate(-1.000000, -1.000000)">
+            <g id="default_update" transform="translate(1.000000, 1.000000)">
+                <g id="bounding-box">
+                    <polygon id="shape" points="0 0 56 0 56 56 0 56"></polygon>
+                </g>
+                <g id="Group" transform="translate(4.000000, 8.000000)" fill="#3B4155" opacity="0.0799999982">
+                    <path d="M46,0 C47.1045695,-2.02906125e-16 48,0.8954305 48,2 L48,30 L46,30 L46,24 L38,24 L38,30 L32,30 L32,38 L38,38 L38,40 L2,40 C0.8954305,40 1.3527075e-16,39.1045695 0,38 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 L46,0 Z M48,38 C48,39.1045695 47.1045695,40 46,40 L46,38 L48,38 Z" id="形状结合"></path>
+                </g>
+                <g id="Group" transform="translate(10.000000, 16.000000)" fill="#3B4155" fill-rule="nonzero">
+                    <g transform="translate(0.000000, 6.000000)" id="形状结合" opacity="0.159375">
+                        <path d="M23.7144033,0.305398458 C24.1375106,-0.101799486 24.8243802,-0.101799486 25.2480313,0.305398458 L25.2480313,0.305398458 L32.082,10 L32,10 L32,16 L26,16 L26,18 L12.280173,18 C12.270112,17.9902167 12.2615465,17.9797723 12.253185,17.9691957 L12.2274205,17.9375982 L0.317330482,17.9375982 C-0.105776827,17.5261697 -0.105776827,16.8598458 0.317330482,16.4484172 L0.317330482,16.4484172 L8.76098611,4.53602644 C9.18409342,4.12459787 9.86933148,4.12459787 10.2924388,4.53602644 L10.2924388,4.53602644 L15.5268962,11.9200588 Z"></path>
+                    </g>
+                    <path d="M12,6 C13.6566,6 15,4.6566 15,3 C15,1.3434 13.6566,0 12,0 C10.3434,0 9,1.3434 9,3 C9,4.6566 10.3434,6 12,6 Z" id="Path" opacity="0.0823660714"></path>
+                </g>
+            </g>
+        </g>
+        <path d="M48,34 L48,40 L54,40 L54,44 L48,44 L48,50 L44,50 L44,44 L38,44 L38,40 L44,40 L44,34 L48,34 Z" id="Combined-Shape" fill="#3B4155" fill-rule="nonzero" opacity="0.32"></path>
+    </g>
+</svg>

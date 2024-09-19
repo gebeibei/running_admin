@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>chehui</title>
+    <defs>
+        <path d="M12,19 C8.6862915,19 6,16.3137085 6,13 L5,13 C5,16.8659932 8.13400679,20 12,20 C15.8659932,20 19,16.8659932 19,13 L18,13 C18,16.3137085 15.3137085,19 12,19 L12,19 Z M9,4.51815012 L8.999,6.99915012 L12.5,7 C15.8730575,6.87046673 18.7270582,9.43285943 18.9863651,12.7712056 L19,13 L18,13 C17.8554781,10.1035486 15.3970781,7.86863955 12.5,8 L12.5,8 L8.999,7.99915012 L9,10.5181501 L6,7.51815012 L9,4.51815012 Z" id="path-1"></path>
+    </defs>
+    <g id="chehui" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Color" fill="#3B4155" fill-rule="nonzero" xlink:href="#path-1"></use>
+    </g>
+</svg>

@@ -114,7 +114,7 @@ import { G } from '@/config/global'
 import { apiKeyMap } from '@/config/apiKeyMap'
 import { formatDate } from '@/utils'
 // import { request } from '@/config/axios'
-// import { ElMessage } from 'zrx-admin-plus'
+// import { ElMessage } from '@/zrxAdminPlus'
 import { getDictInfo } from '@/utils/common'
 
 defineOptions({ name: 'tablePage' })

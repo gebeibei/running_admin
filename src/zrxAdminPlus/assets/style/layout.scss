@@ -1,0 +1,171 @@
+@mixin columnFlex() {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+.zrx-root {
+    --zrx-top-nav-height: 56px;
+    --zrx-page-padding: 0 16px 16px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: $font;
+
+    .zrx-root-context {
+        display: flex;
+        align-items: stretch;
+        height: 100vh;
+        overflow: hidden;
+
+        &.is-collapsed {
+            --zrx-left-side-width: 48px;
+            --zrx-left-side-padding: 12px 4px;
+
+            .zrx-left-headline .zrx-project-icon,
+            .zrx-left-headline .zrx-left-main-title > * {
+                margin-right: 0;
+            }
+
+            .el-menu-item {
+                @include flex-center;
+            }
+        }
+    }
+
+    .zrx-common-shadow {
+        box-shadow: var(--el-box-shadow);
+    }
+
+    .zrx-common-container {
+        background-color: $white;
+        border-radius: 2px;
+        box-shadow: var(--el-box-shadow);
+    }
+
+    .zrx-left-side {
+        flex: 0 0 auto;
+        width: var(--zrx-left-side-width, 200px);
+        border-right: solid 1px $border;
+        @include columnFlex;
+        user-select: none;
+        background-image: var(--zrx-menu-bg);
+        transition: width var(--el-transition-duration);
+
+        .zrx-left-headline {
+            width: 100%;
+
+            flex: 0 0 auto;
+
+            &.has-sub-title {
+                height: 76px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 16px 0 0;
+            }
+
+            &:not(.has-sub-title) {
+                height: 56px;
+                @include flex-center;
+            }
+
+            .zrx-left-main-title {
+                width: 100%;
+                @include flex-center;
+
+                i {
+                    @include size(24px);
+                    margin-right: 8px;
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+
+                span {
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    white-space: nowrap;
+                    cursor: default;
+                    @include ellipsis;
+                }
+            }
+
+            .zrx-left-sub-title {
+                width: fit-content;
+                margin-top: 8px;
+                border: 1px solid $border;
+                border-radius: 2px;
+                height: 28px;
+                font-size: 14px;
+                color: getCssVar('font', 0.9);
+                letter-spacing: 0.5px;
+                padding: 0 8px;
+                @include flex-center;
+            }
+        }
+
+        .zrx-left-menu {
+            flex: 1 1 auto;
+            height: 10px;
+            overflow-y: auto;
+            padding: var(--zrx-left-side-padding, 12px 8px);
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .el-menu-vertical-demo:not(.el-menu--collapse) {
+                width: calc(var(--zrx-left-side-width, 200px) - 16px);
+            }
+
+            .el-menu {
+                background: transparent;
+
+                .zrx-menu-icon {
+                    flex-shrink: 0;
+                    mask-image: var(--mask-image);
+                }
+
+                .zrx-menu-label {
+                    @include ellipsis;
+                }
+            }
+        }
+
+        .zrx-left-bottom {
+            flex: 0 0 auto;
+            height: 44px;
+            display: flex;
+            align-items: center;
+
+            i {
+                cursor: pointer;
+                @include size(20px);
+                margin-left: 14px;
+                background-color: $font;
+            }
+        }
+    }
+
+    .zrx-right-side {
+        position: relative;
+        flex: 1 1 auto;
+        background: $background;
+        @include columnFlex;
+        overflow: hidden;
+
+        .zrx-top-nav {
+            height: var(--zrx-top-nav-height);
+            display: flex;
+            align-items: center;
+            padding: 0 var(--zrx-top-nav-padding-x, 16px);
+        }
+
+        .zrx-floor-context {
+            padding: var(--zrx-page-padding);
+            height: calc(100vh - var(--zrx-top-nav-height));
+        }
+    }
+}

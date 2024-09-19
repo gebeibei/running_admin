@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>img/default_map_default_l</title>
+    <defs>
+        <path d="M35.1,38.4 L35.1,39.651 L28.6,42.4643396 L14.6,36.4053333 L0.6,42.4643396 L0.6,5.39466667 L14.6,0.4 L28.6,5.39466667 L42.6,0.4 L42.6010282,20.8486111 C41.4201066,20.240509 40.0630363,19.9 38.6,19.9 C33.7733398,19.9 30.1,23.98 30.1,28.4 L30.1,28.4 L30.1,29.9 L36.6,29.9 C36.6,27.4477295 37.8543945,26.7934326 38.8178955,26.7934326 C39.7813965,26.7934326 40.3,27.8969482 40.3,28.4 C40.3,30.7443604 35.1,30.4853271 35.1,38.4 L35.1,38.4 L35.1,38.4 Z M42.6003438,35.3439316 L42.6,36.4053333 L41.8440955,36.732054 C42.0211113,36.1895748 42.284375,35.7400771 42.6003438,35.3439316 Z" id="path-1"></path>
+    </defs>
+    <g id="img/default_map_default_l" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="default_map_img" transform="translate(-1.000000, -1.000000)">
+            <g id="bounding-box" transform="translate(1.000000, 1.000000)">
+                <polygon id="shape" points="0 0 56 0 56 56 0 56"></polygon>
+            </g>
+            <g id="baseline-map-24px-copy-2" transform="translate(7.400000, 7.600000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Combined-Shape" fill="#3B4155" opacity="0.0799999982" xlink:href="#path-1"></use>
+                <polygon id="Path" fill="#3B4155" opacity="0.0799999982" mask="url(#mask-2)" points="28.6 42.4 14.6 36.4 14.6 0.4 28.6 5.4"></polygon>
+            </g>
+            <path d="M47.75,50 L44.25,50 L44.25,46.48 L47.75,46.48 L47.75,50 Z M47.75,44.84 L44.25,44.84 C44.25,39.12 49.5,39.56 49.5,36.04 C49.5,34.104 47.925,32.52 46,32.52 C44.075,32.52 42.5,34.104 42.5,36.04 L39,36.04 C39,32.1504 42.1325,29 46,29 C49.8675,29 53,32.1504 53,36.04 C53,40.44 47.75,40.88 47.75,44.84 Z" id="Shape" fill="#3B4155" fill-rule="nonzero" opacity="0.297623"></path>
+        </g>
+    </g>
+</svg>

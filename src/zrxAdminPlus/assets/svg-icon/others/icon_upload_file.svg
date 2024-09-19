@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>09_Common_Default/default_error_l</title>
+    <g id="09_Common_Default/default_error_l" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-13">
+            <polygon id="shape" points="0 0 56 0 56 56 0 56"></polygon>
+            <g id="default" transform="translate(9.000000, 4.000000)" fill="#3B4155">
+                <path d="M2,0 L23.9999379,0 L23.9999379,0 L38,13.9995117 L38,46 C38,47.1045695 37.1045695,48 36,48 L2,48 C0.8954305,48 1.3527075e-16,47.1045695 0,46 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 Z" id="Rectangle-9" opacity="0.0799999982"></path>
+                <polygon id="Path" fill-rule="nonzero" opacity="0.32" points="21 26 21 36 17 36 17 26 11 26 19 17 27 26"></polygon>
+                <polygon id="Path" opacity="0.0799999982" points="24 14 24 0 38 14"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

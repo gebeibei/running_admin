@@ -138,7 +138,7 @@
 
 <script setup>
 import lodash from 'lodash'
-import { ElMessage } from 'zrx-admin-plus'
+import { ElMessage } from '@/zrxAdminPlus'
 import validateRules from '@/utils/validateRules'
 import { apiKeyMap } from '@/config/apiKeyMap'
 import { request } from '@/config/axios'
