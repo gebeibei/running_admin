@@ -26,14 +26,14 @@
         &[type="password"] {
             +.el-input__suffix {
                 .el-input__password {
-                    mask-image: url("~@/assets/svg-icon/auto-import/closed-eye.svg");
+                    mask-image: url("~@/zrxAdminPlus/assets/svg-icon/auto-import/closed-eye.svg");
                 }
             }
         }
         &[type="text"] {
             +.el-input__suffix {
                 .el-input__password {
-                    mask-image: url("~@/assets/svg-icon/auto-import/eye.svg");
+                    mask-image: url("~@/zrxAdminPlus/assets/svg-icon/auto-import/eye.svg");
                 }
             }
         }
