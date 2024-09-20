@@ -6,7 +6,7 @@ import unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
-export default defineConfig(({ command }) => {
+export default defineConfig(({ mode }) => {
     return {
         base: mode === 'production' ? 'running_admin' : './',
         plugins: [
