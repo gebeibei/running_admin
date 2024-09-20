@@ -6,48 +6,51 @@ import unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
-export default defineConfig({
-    plugins: [
-        vue(),
-        unocss(),
-        AutoImport({
-            imports: ['vue', 'vue-router', 'pinia'], // 自动引入vue,vue-router,pinia的方法
-            resolvers: [],
-            dts: true,
-            eslintrc: {
-                enabled: true
+export default defineConfig(({ command }) => {
+    return {
+        base: command == 'build' ? '/running_admin' : '/',
+        plugins: [
+            vue(),
+            unocss(),
+            AutoImport({
+                imports: ['vue', 'vue-router', 'pinia'], // 自动引入vue,vue-router,pinia的方法
+                resolvers: [],
+                dts: true,
+                eslintrc: {
+                    enabled: true
+                },
+                dirs: ['src/hooks']
+            }),
+            Components({
+                dirs: ['src/components/'],
+                extensions: ['vue'],
+                deep: true,
+                // 生成components.d.ts
+                dts: true,
+                resolvers: []
+            })
+        ],
+        resolve: {
+            alias: {
+                '@': '/src',
+                '~@': '/src'
             },
-            dirs: ['src/hooks']
-        }),
-        Components({
-            dirs: ['src/components/'],
-            extensions: ['vue'],
-            deep: true,
-            // 生成components.d.ts
-            dts: true,
-            resolvers: []
-        })
-    ],
-    resolve: {
-        alias: {
-            '@': '/src',
-            '~@': '/src'
+            extensions: ['.vue', '.js', '.json']
         },
-        extensions: ['.vue', '.js', '.json']
-    },
-    css: {
-        postcss: {
-            plugins: [autoprefixer]
-        },
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import "@/assets/style/variable.scss";@import "@/zrxAdminPlus/assets/style/common/variable.scss";`
+        css: {
+            postcss: {
+                plugins: [autoprefixer]
+            },
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `@import "@/assets/style/variable.scss";@import "@/zrxAdminPlus/assets/style/common/variable.scss";`
+                }
             }
+        },
+        server: {
+            port: 8096,
+            host: '0.0.0.0',
+            https: false
         }
-    },
-    server: {
-        port: 8096,
-        host: '0.0.0.0',
-        https: false
     }
 })
