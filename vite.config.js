@@ -8,7 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig(({ command }) => {
     return {
-        base: command == 'build' ? '/running_admin' : '/',
+        // base: command == 'build' ? '/running_admin' : '/',
         plugins: [
             vue(),
             unocss(),
