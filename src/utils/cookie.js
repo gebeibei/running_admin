@@ -56,7 +56,6 @@ export function delCookie(key, option) {
 export function clearTokenAndToLogin() {
     if (import.meta.env.PROD) {
         delCookie(G.accessToken)
-        window.open(G.redirectURL, '_self')
     }
 }
 export function getToken() {
